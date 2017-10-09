@@ -8,27 +8,57 @@
     <meta name="author" content="Karolina Malanowska, Michał Regulski">
     <title>ArtIsHere</title>
 </head>
-<body>
+<body style="background-color: rgba(26,26,26,255)">
 <div id="header">
-    <div id="logo-box">
+    <div id="logo-box" style="background-color: rgba(26,26,26,255); display: inline-block">
         <a href="index.html">
-            <img src="logo.png" alt="Logo"/>
+            <img src="images/logo.png" alt="Logo" style="width:256px;"/>
         </a>
     </div>
-    <div id="login-box">
+    <div id="login-box" style="float:right">
+        <h2 style="font-family: Consolas; color: #e3dbe2; text-align: left;">Log in</h2>
+        <hr>
         <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
         <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
-        <button id="login-button" type="submit" tabindex="3">
-            Log In
-        </button>
     </div>
+</div>
+<hr style="color: #e3dbe2;">
+<div id="welcome-text">
+    <h4 style="color: #e3dbe2; font-family: 'Verdana'; text-align: center">Best place in the web where you can find modern art created by our users. Join now for free and share your content!</h4>
+</div>
+
+<div id="small-gallery">
+    <hr style="color: #e3dbe2;">
+    <table style="width:100%">
+        <tr><img src="images/art1.jpg" alt="art1" style="max-width: 33%; min-height: 33%"/></tr>
+        <tr><img src="images/art2.jpg" alt="art2" style="max-width: 33%; min-height: 33%"/></tr>
+        <tr><img src="images/art3.jpg" alt="art3" style="max-width: 33%; min-height: 34%"/></tr>
+    </table>
+</div>
+
+<div id="top-artists">
+    <hr style="color: #e3dbe2;">
+    <h1 style="color: #e3dbe2; font-family: 'Verdana'; text-align: center"> Top artists </h1>
+    <table style="width: 100%; text-align: center;font-family: Verdana; color: #e3dbe2; border: dashed";>
+        <tr>
+            <th>Traditional art</th>
+            <th>Digital art</th>
+            <th>Animation</th>
+        </tr>
+        <tr >
+            <td>Zdzisław Kropka</td>
+            <td>Stefan Kopytko</td>
+            <td>Waldemar Gąbka</td>
+        </tr>
+
+    </table>
 </div>
 <div id="content-box">
     <div id="main-content-box">
 
     </div>
     <div id="footer">
-        ArtIsHere © 2017
+        <p style="color: #e3dbe2;">ArtIsHere &#169 2017</p>
 
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
