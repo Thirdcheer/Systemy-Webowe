@@ -1,0 +1,56 @@
+body {
+    background-color: #1a1a1a;
+    color: #e3dbe2;
+    font-family: Verdana, sans-serif;
+}
+
+#logo {
+    display: inline-block;
+    width: 256px;
+}
+
+.login-box {
+    float: right;
+}
+
+.main-content hr {
+    color: #e3dbe2;
+}
+
+.small-gallery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-element {
+    width: 33%;
+    height: 33%;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.top-artists table {
+    width: 100%;
+    text-align: center;
+    border: dashed;
+}
+
+.promotion {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.promotion a {
+    color: plum;
+}
+
+.bottom-footer {
+    font-size: 10px;
+}
+
+.main-footer a {
+    color: plum;
+}
