@@ -40,15 +40,15 @@
         <form method="POST" autocomplete="on">
             <fieldset>
                 <legend>Personal data</legend>
-                <input type="text" name="firstname" autofocus required> Name<br>
+                <input  type="text" name="firstname" title="Name" autofocus required> Name<br>
                 <br>
-                <input type="text" name="lastname" required> Surname<br>
+                <input type="text" name="lastname" title="Surname" required> Surname<br>
                 <br>
-                <input type="text" name="nick"> Nick<br>
+                <input type="text" name="nick" title="Nick"> Nick<br>
                 <br>
-                <input type="password" name="pass"> Password<br>
+                <input type="password" name="pass" title="Password"> Password<br>
                 <br>
-                <input list="month" name="month"> Month of birth<br>
+                <input list="month" name="month" title="Month of birth"> Month of birth<br>
                 <datalist id="month">
                     <option>Styczeń</option>
                     <option>Luty</option>
@@ -64,9 +64,9 @@
                     <option>Grudzień</option>
                 </datalist>
                 <br>
-                <input type="email" name="email" required> E-mail<br>
+                <input type="email" name="email" title="E-mail" required> E-mail<br>
                 <br>
-                <input type="tel" name="tel" pattern="[0-9]{9}"> Phone number (9 digits)
+                <input type="tel" name="tel" title="Phone number (9 digits)" pattern="[0-9]{9}"> Phone number (9 digits)
                 <br>
             </fieldset>
             <br>
@@ -74,7 +74,7 @@
                 <legend>Profile data</legend>
                 <b>What type of art do you like the most?</b>
                 <br>
-                <select name="Art types">
+                <select name="Art types" title="Art types">
                     <optgroup label="Traditional art">
                         <option value="Paper">On paper</option>
                         <option value="Canvas">On canvas</option>
@@ -95,16 +95,16 @@
 
                 <b>Who are you?</b><br>
 
-                <input type="radio" name="artist">Artist<br>
-                <input type="radio" name="student">Student<br>
-                <input type="radio" name="teacher">Teacher<br>
-                <input type="radio" name="random">Random person<br>
+                <input type="radio" name="artist" title="Artist">Artist<br>
+                <input type="radio" name="student" title="Student">Student<br>
+                <input type="radio" name="teacher" title="Teacher">Teacher<br>
+                <input type="radio" name="random" title="Random person">Random person<br>
                 <br>
 
                 <b>Tell something more about you</b><br>
-                <textarea maxlength="200">Description up to 200 chars</textarea><br>
+                <textarea title="Description" maxlength="200">Description up to 200 chars</textarea><br>
                 <br>
-                <input type="checkbox" name="mentoring"><b>I want to participate in ArtIsHere mentoring program</b>
+                <input type="checkbox" name="mentoring" title="I want to participate in ArtIsHere mentoring program"><b>I want to participate in ArtIsHere mentoring program</b>
             </fieldset>
 
             <input class="button" type="submit" value="Submit">
