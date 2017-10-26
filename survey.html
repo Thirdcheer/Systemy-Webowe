@@ -36,45 +36,41 @@
 
 <div class="main-content">
     <hr>
-    <h4 class="centered-text">Best place in the web where you can find modern art created by our users. Join now for
-        free and share your
-        content!</h4>
-    <hr>
-    <div class="small-gallery">
-        <img class="gallery-element" src="images/art1.jpg" alt="art1"/>
-        <img class="gallery-element" src="images/art2.jpg" alt="art2"/>
-        <img class="gallery-element" src="images/art3.jpg" alt="art3"/>
-    </div>
-    <hr>
-    <div class="top-artists">
-        <h1 id="centered-text">Top artists</h1>
-        <table>
-            <tr>
-                <th><mark>Traditional art</mark></th>
-                <th><mark>Digital art</mark></th>
-                <th><mark>Animation</mark></th>
-            </tr>
-            <tr>
-                <td>Zdzisław Kropka</td>
-                <td>Stefan Kopytko</td>
-                <td>Waldemar Gąbka</td>
-            </tr>
-            <tr>
-                <td>Andrzej Kochanek</td>
-                <td>Michał Pietraszko</td>
-                <td>Barbara Mazur</td>
-            </tr>
-        </table>
-    </div>
-    <div class="promotion">
-        <hr>
-        <p>Check out our website! <a href="register.html" id="register-link">Register now!</a></p>
-    </div>
+    <form method="POST" autocomplete="on">
+        <fieldset>
+            <legend>Tell us your preferences</legend>
+            <input type="text" name="artist" placeholder="Who is your favourite artist?"> <br>
+            <br>
+            What is your favourite colour?<br>
+            <input type="color" name="favcolor"><br>
+            <br>
+            In which month were you born?<br>
+            <input type="month" name="birthmonth"><br>
+            <br>
+            How much do you like this page? <input type="range" name="satisfaction" min="0" max="10"><br>
+            <br>
+            Do you have your own website? <input type="url" name="homepage" placeholder="Write url here"><br>
+            <br>
+            <input type="submit"><br>
+        </fieldset>
+    </form>
+
+
+    <form>
+        <fieldset>
+            <legend>Search</legend>
+            <input type="search" name="search" placeholder="Test our search engine!">
+            <input type="submit" name="Search">
+        </fieldset>
+    </form>
+
 </div>
 <footer class="main-footer">
     <div class="bottom-footer">
         <p>ArtIsHere &#169; 2017</p>
     </div>
+
 </footer>
 </body>
 </html>
+

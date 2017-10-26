@@ -47,7 +47,7 @@ hr {
 
 .promotion {
     text-align: center;
-    font-size: 25px;
+    font-size: 2em;
     margin-top: 50px;
 }
 
@@ -84,3 +84,61 @@ hr {
     margin-left: 5%;
     color: #e3dbe2;
 }
+
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #aa0088;
+}
+
+.menu .active {
+    background-color: #aa0088;
+}
+
+.picture-show {
+    margin: 5px;
+    border: 1px solid #aa0088;
+    float: left;
+    width: 32%;
+}
+
+.picture-show img {
+    width: 100%;
+    height: auto;
+}
+
+.picture-show .note {
+    padding: 15px;
+    text-align: center;
+}
+ mark{
+     background-color: plum;
+ }
+
+ .sitemap {
+     text-align: center;
+     font-size: 18pt;
+ }
+
+ .sitemap aside{
+     font-size: xx-large;
+ }
