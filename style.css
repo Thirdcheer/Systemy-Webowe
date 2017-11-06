@@ -159,6 +159,9 @@ mark {
 
 .top-artists h1{
     position: static;
+    line-height: 50px;
+    font-variant: small-caps;
+    font-weight: lighter;
 }
 
 .main-footer img{
