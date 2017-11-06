@@ -144,3 +144,15 @@ mark {
 .sitemap aside {
     font-size: xx-large;
 }
+
+.about-page .main-content{
+    background-image: url("images/background-texture.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.contact-page .mail-to{
+    background-image: url("images/smile.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+}
