@@ -185,3 +185,9 @@ mark {
 a[id="register-link"]{
     text-decoration: none;
 }
+
+@media only screen and (max-width: 900px) {
+    .picture-show{
+        width:100%;
+    }
+}
