@@ -119,7 +119,9 @@ hr {
 
 .picture-show {
     margin: 5px;
-    border: 1px solid #aa0088;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #aa0088;
     float: left;
     width: 32%;
 }
