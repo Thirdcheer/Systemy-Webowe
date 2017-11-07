@@ -182,4 +182,6 @@ mark {
     bottom: 0;
 }
 
-
+a[id="register-link"]{
+    text-decoration: none;
+}
