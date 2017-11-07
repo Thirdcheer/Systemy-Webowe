@@ -191,3 +191,66 @@ a[id="register-link"]{
         width:100%;
     }
 }
+
+.mentoring-checkbox:checked{
+    height: 25px;
+    width: 25px;
+}
+
+.search-engine:disabled{
+    background: #dddddd;
+}
+
+p:empty{
+    background-color: plum;
+    width: 100%;
+    height: 10px;
+}
+
+input[id="login"]:enabled{
+    background-color: #F0DCEC;
+}
+
+input[id="password"]:enabled{
+    background-color: #F0DCEC;
+}
+
+input[id="login"]:focus{
+    background-color: plum;
+}
+
+input[id="password"]:focus{
+    background-color: plum;
+}
+
+hr:first-child{
+    color: #F0DCEC;
+}
+
+hr:last-child{
+    color: #F0DCEC;
+}
+
+p:last-of-type{
+    color: #F0DCEC;
+}
+
+a:link {
+    text-decoration-style: dashed;
+}
+
+:not(.top-artists h1){
+    font-style: normal;
+}
+
+input:required {
+    background-color: plum;
+}
+
+:target {
+    border: 2px solid #aa0088;
+}
+
+a:visited {
+    color: aqua;
+}
