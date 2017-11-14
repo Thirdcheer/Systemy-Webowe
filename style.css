@@ -1,7 +1,13 @@
+.header {
+    display: block;
+    width: 100%;
+}
+
 body {
     background-color: #1a1a1a;
     color: #e3dbe2;
     font-family: Verdana, sans-serif;
+    min-width: 900px;
 }
 
 a {
@@ -12,11 +18,15 @@ hr {
     color: #e3dbe2;
 }
 
+.header__container {
+    display: flex;
+    justify-content: space-between;
+}
+
 #logo {
     display: inline-block;
     width: 256px;
 }
-
 
 .login-box {
     float: right;
@@ -28,7 +38,7 @@ hr {
 
 .small-gallery {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .gallery-element {
@@ -92,68 +102,63 @@ h2 {
     color: #e3dbe2;
 }
 
-.menu ul {
-    list-style-type: none;
+#header__menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    position: relative;
     background-color: #1a1a1a;
 }
 
-.menu li {
-    float: left;
+#header__menu ul li {
+    position: relative;
+    margin: 0;
 }
 
-.menu li a, dropbtn {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.menu li a:hover, .dropbtn:hover .dropbtn {
-    background-color: #aa0088;
-}
-
-li.dropdown {
-    display: inline-block;
-}
-
-.dropdown-content {
+#header__menu ul ul {
     display: none;
     position: absolute;
-    background-color: #1a1a1a;
-    min-width: 160px;
+    top: 100%;
+    left: 0;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+#header__menu ul ul ul {
+    top: 0;
+    left: 100%
+}
+
+#header__menu ul li:hover > ul {
+    display: block;
+}
+
+#header__menu li {
+    display: block;
     text-decoration: none;
-    display: block;
-    text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+#header__menu li a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
 }
 
-.menu .active {
+#header__menu li:hover {
     background-color: #aa0088;
 }
 
 .picture-show {
     margin: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #aa0088;
+    border: 1px solid #aa0088;
     float: left;
     width: 32%;
-    box-shadow: 0px 0px 10px #aa0088;
-    background: radial-gradient(circle,rgba(26, 26, 26,1), rgba(170, 0, 136,0.2));
+    box-shadow: 0 0 10px #aa0088;
+    background: radial-gradient(circle, rgba(26, 26, 26, 1), rgba(170, 0, 136, 0.2));
 }
 
 .picture-show img {
@@ -179,27 +184,27 @@ mark {
     font-size: xx-large;
 }
 
-.about-page .main-content{
+.about-page .main-content {
     background-image: url("images/background-texture.jpg");
     background-repeat: repeat;
     background-attachment: fixed;
     background-origin: content-box;
 }
 
-.contact-page .mail-to{
+.contact-page .mail-to {
     background-image: url("images/smile.svg");
     background-position: right;
     background-repeat: no-repeat;
 }
 
-.top-artists h1{
+.top-artists h1 {
     position: static;
     line-height: 50px;
     font-variant: small-caps;
     font-weight: lighter;
 }
 
-.main-footer img{
+.main-footer img {
     height: 25px;
     width: 25px;
     position: fixed;
@@ -208,61 +213,61 @@ mark {
     border: transparent;
 }
 
-.main-footer{
+.main-footer {
     position: relative;
     bottom: 0;
 }
 
-a[id="register-link"]{
+a[id="register-link"] {
     text-decoration: none;
 }
 
 @media only screen and (max-width: 900px) {
-    .picture-show{
-        width:100%;
+    .picture-show {
+        width: 100%;
     }
 }
 
-.mentoring-checkbox:checked{
+.mentoring-checkbox:checked {
     height: 25px;
     width: 25px;
 }
 
-.search-engine:disabled{
+.search-engine:disabled {
     background: #dddddd;
 }
 
-p:empty{
+p:empty {
     background-color: plum;
     width: 100%;
     height: 10px;
 }
 
-input[id="login"]:enabled{
+input[id="login"]:enabled {
     background-color: #F0DCEC;
 }
 
-input[id="password"]:enabled{
+input[id="password"]:enabled {
     background-color: #F0DCEC;
 }
 
-input[id="login"]:focus{
+input[id="login"]:focus {
     background-color: plum;
 }
 
-input[id="password"]:focus{
+input[id="password"]:focus {
     background-color: plum;
 }
 
-hr:first-child{
+hr:first-child {
     color: #F0DCEC;
 }
 
-hr:last-child{
+hr:last-child {
     color: #F0DCEC;
 }
 
-p:last-of-type{
+p:last-of-type {
     color: #F0DCEC;
 }
 
@@ -270,7 +275,7 @@ a:link {
     text-decoration-style: dashed;
 }
 
-:not(.top-artists h1){
+:not(.top-artists h1) {
     font-style: normal;
 }
 
@@ -292,6 +297,5 @@ div {
 }
 
 header {
-    height: 200px;
-    background: linear-gradient(to right, rgba(26, 26, 26,1), rgba(170, 0, 136,0.1));
+    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(170, 0, 136, 0.1));
 }
