@@ -5,7 +5,7 @@ body {
 }
 
 a {
-    color: plum;
+    color: hsla(180, 100%, 50%, 0.5);
 }
 
 hr {
@@ -280,7 +280,7 @@ input:required {
 }
 
 a:visited {
-    color: aqua;
+    color: aquamarine;
 }
 
 div {
