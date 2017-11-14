@@ -37,6 +37,10 @@ hr {
     height: 33%;
 }
 
+h2 {
+    text-shadow: 2px 2px #aa0088;
+}
+
 .centered-text {
     text-align: center;
 }
