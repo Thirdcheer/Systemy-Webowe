@@ -18,7 +18,6 @@ hr {
 }
 
 
-
 .login-box {
     float: right;
 }
@@ -282,4 +281,9 @@ input:required {
 
 a:visited {
     color: aqua;
+}
+
+div {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
