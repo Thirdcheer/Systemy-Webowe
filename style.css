@@ -183,6 +183,7 @@ mark {
     background-image: url("images/background-texture.jpg");
     background-repeat: repeat;
     background-attachment: fixed;
+    background-origin: content-box;
 }
 
 .contact-page .mail-to{
