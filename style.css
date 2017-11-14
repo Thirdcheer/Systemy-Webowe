@@ -28,7 +28,7 @@ hr {
 
 .small-gallery {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 .gallery-element {
@@ -152,6 +152,7 @@ li.dropdown {
     border-color: #aa0088;
     float: left;
     width: 32%;
+    box-shadow: 0px 0px 10px #aa0088;
 }
 
 .picture-show img {
