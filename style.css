@@ -1,3 +1,5 @@
+/* General */
+
 body {
     background-color: #1a1a1a;
     color: #e3dbe2;
@@ -6,13 +8,64 @@ body {
     margin: 0
 }
 
-.header {
-    display: block;
-    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(41, 23, 37, 1));
+a {
+    color: hsla(180, 100%, 50%, 0.5);
 }
 
-header {
-    margin: 0;
+a:link {
+    text-decoration-style: dashed;
+}
+
+a:visited {
+    color: aquamarine;
+}
+
+hr {
+    color: #e3dbe2;
+}
+
+hr:first-child {
+    color: #F0DCEC;
+}
+
+hr:last-child {
+    color: #F0DCEC;
+}
+
+h2 {
+    text-shadow: 2px 2px rgba(170, 0, 136, 0.48);
+}
+
+mark {
+    background-color: plum;
+}
+
+p:empty {
+    background-color: plum;
+    width: 100%;
+    height: 10px;
+}
+
+p:last-of-type {
+    color: #F0DCEC;
+}
+
+input:required {
+    background-color: plum;
+}
+
+:target {
+    border: 2px solid #aa0088;
+}
+
+.top-artists :not(h1) {
+    font-style: normal;
+}
+
+/* Header */
+
+.header {
+    display: block;
 }
 
 #logo {
@@ -27,6 +80,9 @@ header {
 .header__container {
     display: flex;
     justify-content: space-between;
+    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(41, 23, 37, 1));
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #header__menu ul {
@@ -79,16 +135,19 @@ header {
     background-color: #aa0088;
 }
 
+#header__menu {
+    border-bottom: 1px solid white;
+}
+
+/* Main content */
+
+.main-content {
+    padding: 10px;
+    display: block;
+}
+
 .button {
     margin: 10px 5px;
-}
-
-a {
-    color: hsla(180, 100%, 50%, 0.5);
-}
-
-hr {
-    color: #e3dbe2;
 }
 
 .small-gallery {
@@ -99,10 +158,6 @@ hr {
 .gallery-element {
     width: 33%;
     height: 33%;
-}
-
-h2 {
-    text-shadow: 2px 2px rgba(170, 0, 136, 0.48);
 }
 
 .centered-text {
@@ -176,10 +231,6 @@ h2 {
     text-align: center;
 }
 
-mark {
-    background-color: plum;
-}
-
 .sitemap {
     text-align: center;
     font-size: 18pt;
@@ -187,10 +238,6 @@ mark {
 
 .sitemap aside {
     font-size: xx-large;
-}
-
-.main-content {
-    margin: 10px;
 }
 
 .about-page .main-content {
@@ -231,12 +278,6 @@ a[id="register-link"] {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 900px) {
-    .picture-show {
-        width: 100%;
-    }
-}
-
 .mentoring-checkbox:checked {
     height: 25px;
     width: 25px;
@@ -246,50 +287,12 @@ a[id="register-link"] {
     background: #dddddd;
 }
 
-p:empty {
-    background-color: plum;
-    width: 100%;
-    height: 10px;
-}
+/* Rules */
 
-.login-box input:enabled {
-    background-color: #F0DCEC;
-}
-
-.login-box input:focus {
-    background-color: plum;
-}
-
-hr:first-child {
-    color: #F0DCEC;
-}
-
-hr:last-child {
-    color: #F0DCEC;
-}
-
-p:last-of-type {
-    color: #F0DCEC;
-}
-
-a:link {
-    text-decoration-style: dashed;
-}
-
-:not(.top-artists h1) {
-    font-style: normal;
-}
-
-input:required {
-    background-color: plum;
-}
-
-:target {
-    border: 2px solid #aa0088;
-}
-
-a:visited {
-    color: aquamarine;
+@media only screen and (max-width: 900px) {
+    .picture-show {
+        width: 100%;
+    }
 }
 
 @font-face {
