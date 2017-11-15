@@ -1,27 +1,18 @@
-.header {
-    display: block;
-    width: 100%;
-    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(41, 23, 37, 1));
-}
-
 body {
     background-color: #1a1a1a;
     color: #e3dbe2;
-    font-family: Verdana, sans-serif;
+    font-family: "Open Sans", sans-serif;
     min-width: 900px;
+    margin: 0
 }
 
-a {
-    color: hsla(180, 100%, 50%, 0.5);
+.header {
+    display: block;
+    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(41, 23, 37, 1));
 }
 
-hr {
-    color: #e3dbe2;
-}
-
-.header__container {
-    display: flex;
-    justify-content: space-between;
+header {
+    margin: 0;
 }
 
 #logo {
@@ -30,11 +21,74 @@ hr {
 }
 
 .login-box {
-    float: right;
+    align-items: flex-end;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header__menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+#header__menu ul li {
+    position: relative;
+    margin: 0;
+}
+
+#header__menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+#header__menu ul ul ul {
+    top: 0;
+    left: 100%
+}
+
+#header__menu ul li:hover > ul {
+    display: block;
+}
+
+#header__menu li {
+    display: block;
+    text-decoration: none;
+}
+
+#header__menu li a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+}
+
+#header__menu li:hover {
+    background-color: #aa0088;
 }
 
 .button {
     margin: 10px 5px;
+}
+
+a {
+    color: hsla(180, 100%, 50%, 0.5);
+}
+
+hr {
+    color: #e3dbe2;
 }
 
 .small-gallery {
@@ -103,56 +157,6 @@ h2 {
     color: #e3dbe2;
 }
 
-#header__menu ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    background-color: #1a1a1a;
-}
-
-#header__menu ul li {
-    position: relative;
-    margin: 0;
-}
-
-#header__menu ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-}
-
-#header__menu ul ul ul {
-    top: 0;
-    left: 100%
-}
-
-#header__menu ul li:hover > ul {
-    display: block;
-}
-
-#header__menu li {
-    display: block;
-    text-decoration: none;
-}
-
-#header__menu li a {
-    display: flex;
-    color: white;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 50px;
-}
-
-#header__menu li:hover {
-    background-color: #aa0088;
-}
-
 .picture-show {
     margin: 5px;
     border: 1px solid #aa0088;
@@ -183,6 +187,10 @@ mark {
 
 .sitemap aside {
     font-size: xx-large;
+}
+
+.main-content {
+    margin: 10px;
 }
 
 .about-page .main-content {
@@ -282,4 +290,20 @@ input:required {
 
 a:visited {
     color: aquamarine;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
