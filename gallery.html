@@ -11,24 +11,38 @@
 </head>
 <body>
 <header class="header">
-    <a href="index.html">
-        <img id="logo" src="images/logo.png" alt="Logo"/>
-    </a>
-    <div class="login-box">
-        <h2>Log in</h2>
-        <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
-        <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
-        <button id="login-button" type="submit" tabindex="3">
-            Log In
-        </button>
+    <div class="header__container">
+        <a href="index.html">
+            <img id="logo" src="images/logo.png" alt="Logo"/>
+        </a>
+        <div class="login-box">
+            <h2>Log in</h2>
+            <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
+            <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
+            <button id="login-button" type="submit" tabindex="3">
+                Log In
+            </button>
+        </div>
     </div>
-    <nav class="menu">
+    <nav id="header__menu">
         <ul>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="sitemap.html">Sitemap</a></li>
             <li><a href="survey.html">Survey</a></li>
+            <li><a href="#">Dropdown</a>
+                <ul>
+                    <li><a href="#">Sub 1</a></li>
+                    <li><a href="#">Sub 2</a></li>
+                    <li><a href="#">Sub 3</a>
+                        <ul>
+                            <li><a href="#">Subsub 1</a></li>
+                            <li><a href="#">Subsub 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>
