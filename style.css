@@ -155,9 +155,36 @@ input:required {
     justify-content: space-between;
 }
 
-.gallery-element {
-    width: 33%;
-    height: 33%;
+#gallery-element-1 {
+    background: url("images/art1.jpg") center;
+}
+
+#gallery-element-2 {
+    background: url("images/art2.jpg") center;
+}
+
+#gallery-element-3 {
+    background: url("images/art3.jpg") center;
+}
+
+.small-gallery .gallery-element {
+    opacity: 0.6;
+    transition: all 0.25s ease-in;
+    flex: 2 2;
+    overflow: hidden;
+    position: relative;
+    background-size: 100%;
+}
+
+.small-gallery .gallery-element:hover {
+    opacity: 1;
+    flex: 5 5;
+}
+
+.small-gallery .gallery-element span {
+    background: no-repeat;
+    display: block;
+    height: 300px;
 }
 
 .centered-text {
@@ -285,6 +312,35 @@ a[id="register-link"] {
 
 .search-engine:disabled {
     background: #dddddd;
+}
+
+#github-banner {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#github-banner a {
+    display: block;
+    width: 190px;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-decoration: none;
+    padding: 5px 15px 5px 25px;
+
+    position: relative;
+    left: 0;
+    top: 170px;
+    text-align: center;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    box-shadow: 1px 1px 5px 1px #666666;
+    background-color: #1a1a1a;
 }
 
 /* Rules */
