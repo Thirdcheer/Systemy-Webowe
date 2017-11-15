@@ -197,6 +197,7 @@ input:required {
     border: groove;
     border-width: thick;
     border-color: #e3dbe2;
+    border-image: url("images/water_texture_2_by_evilpenguinsinc-d8sbauu.png") 30 round;
 }
 
 .promotion {
