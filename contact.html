@@ -9,26 +9,40 @@
     <meta name="author" content="Karolina Malanowska, Michał Regulski">
     <title>Contact</title>
 </head>
-<body>
-<header>
-    <a href="index.html">
-        <img id="logo" src="images/logo.png" alt="Logo"/>
-    </a>
-    <div class="login-box">
-        <h2>Log in</h2>
-        <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
-        <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
-        <button id="login-button" type="submit" tabindex="3">
-            Log In
-        </button>
+<body class="contact-page">
+<header class="header">
+    <div class="header__container">
+        <a href="index.html">
+            <img id="logo" src="images/logo.png" alt="Logo"/>
+        </a>
+        <div class="login-box">
+            <h2>Log in</h2>
+            <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
+            <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
+            <button id="login-button" type="submit" tabindex="3">
+                Log In
+            </button>
+        </div>
     </div>
-    <nav class="menu">
+    <nav id="header__menu">
         <ul>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="sitemap.html">Sitemap</a></li>
             <li><a href="survey.html">Survey</a></li>
+            <li><a href="#">Dropdown</a>
+                <ul>
+                    <li><a href="#">Sub 1</a></li>
+                    <li><a href="#">Sub 2</a></li>
+                    <li><a href="#">Sub 3</a>
+                        <ul>
+                            <li><a href="#">Subsub 1</a></li>
+                            <li><a href="#">Subsub 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>
@@ -38,14 +52,18 @@
     <h4 class="centered-text">Best place in the web where you can find modern art created by our users. Join now for
         free and share your
         content!</h4>
-    <hr>
-    <a href="mailto:someone@example.com" style="color:plum">someone@example.com</a>
+    <div class="mail-to">
+        <hr>
+        <a href="mailto:someone@example.com" style="color:plum">someone@example.com</a>
+    </div>
     <div class="promotion">
         <p>Check out our website! <a href="register.html" id="register-link">Register now!</a></p>
     </div>
     <hr>
 </div>
-
+<div id="github-banner">
+    <a href="https://github.com/Thirdcheer/Systemy-webowe">Fork me on GitHub</a>
+</div>
 <footer class="main-footer">
     <div class="bottom-footer">
         <p>ArtIsHere &#169; 2017</p>
