@@ -1,7 +1,7 @@
 /* General */
 
 body {
-    background-color: #1a1a1a;
+    background-color: var(--primary-color);
     color: #e3dbe2;
     font-family: "Open Sans", sans-serif;
     min-width: 900px;
@@ -9,7 +9,7 @@ body {
 }
 
 a {
-    color: hsla(180, 100%, 50%, 0.5);
+    color: var(--link-color);
 }
 
 a:link {
@@ -17,45 +17,37 @@ a:link {
 }
 
 a:visited {
-    color: aquamarine;
+    color: var(--link-visited-color);
 }
 
 hr {
-    color: #e3dbe2;
-}
-
-hr:first-child {
-    color: #F0DCEC;
-}
-
-hr:last-child {
-    color: #F0DCEC;
+    color: var(--third-accent-color);
 }
 
 h2 {
-    text-shadow: 2px 2px rgba(170, 0, 136, 0.48);
+    text-shadow: 2px 2px rgba(168, 0, 135, 0.48);
 }
 
 mark {
-    background-color: plum;
+    background-color: var(--secondary-accent-color);
 }
 
 p:empty {
-    background-color: plum;
+    background-color: var(--secondary-accent-color);
     width: 100%;
     height: 10px;
 }
 
 p:last-of-type {
-    color: #F0DCEC;
+    color: var(--third-accent-color);
 }
 
 input:required {
-    background-color: plum;
+    background-color: var(--secondary-accent-color);
 }
 
 :target {
-    border: 2px solid #aa0088;
+    border: 2px solid var(--primary-accent-color);
 }
 
 .top-artists :not(h1) {
@@ -80,7 +72,7 @@ input:required {
 .header__container {
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(41, 23, 37, 1));
+    background: linear-gradient(to right, rgb(26, 26, 26), rgb(41, 23, 37));
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -92,7 +84,7 @@ input:required {
     margin: 0;
     padding: 0;
     position: relative;
-    background-color: #1a1a1a;
+    background-color: var(--primary-color);
     z-index: 2;
 }
 
@@ -133,7 +125,7 @@ input:required {
 }
 
 #header__menu li:hover {
-    background-color: #aa0088;
+    background-color: var(--primary-accent-color);
 }
 
 #header__menu {
@@ -195,9 +187,7 @@ input:required {
 .top-artists table {
     width: 100%;
     text-align: center;
-    border: groove;
-    border-width: thick;
-    border-color: #e3dbe2;
+    border: thick groove #e3dbe2;
     border-image: url("images/water_texture_2_by_evilpenguinsinc-d8sbauu.png") 30 round;
 }
 
@@ -231,7 +221,7 @@ input:required {
     width: 45%;
     font-size: 230%;
     text-align: right;
-    color: plum;
+    color: var(--secondary-accent-color);
 }
 
 .functionality-list {
@@ -243,10 +233,10 @@ input:required {
 
 .picture-show {
     margin: 5px;
-    border: 1px solid #aa0088;
+    border: 1px solid var(--primary-accent-color);
     float: left;
     width: 32%;
-    box-shadow: 0 0 10px #aa0088;
+    box-shadow: 0 0 10px var(--primary-accent-color);
     background: radial-gradient(circle, rgba(26, 26, 26, 1), rgba(170, 0, 136, 0.2));
 }
 
@@ -270,16 +260,12 @@ input:required {
 }
 
 .about-page .main-content {
-    background-image: url("images/background-texture.jpg");
-    background-repeat: repeat;
-    background-attachment: fixed;
+    background: url("images/background-texture.jpg") repeat fixed;
     background-origin: content-box;
 }
 
 .contact-page .mail-to {
-    background-image: url("images/smile.svg");
-    background-position: right;
-    background-repeat: no-repeat;
+    background: url("images/smile.svg") no-repeat right;
 }
 
 .top-artists h1 {
@@ -349,11 +335,22 @@ a[id="register-link"] {
     transform-origin: 0 0;
     transform: rotate(-45deg);
     box-shadow: 1px 1px 5px 1px #666666;
-    background-color: #1a1a1a;
+    background-color: var(--primary-color);
     z-index: 100;
 }
 
 /* Rules */
+
+:root {
+    --main-color: #666666;
+    --primary-color: #1a1a1a;
+    --primary-accent-color: #aa0088;
+    --secondary-accent-color: #dda0dd;
+    --third-accent-color: #f0dcec;
+    --link-color: #7fffd4;
+    --link-visited-color: #00ffff;
+
+}
 
 @media only screen and (max-width: 1300px) {
     .picture-show {
