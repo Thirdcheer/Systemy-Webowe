@@ -269,12 +269,6 @@ input:required {
     font-size: xx-large;
 }
 
-.about-page .main-content {
-    background-image: url("images/background-texture.jpg");
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-origin: content-box;
-}
 
 .contact-page .mail-to {
     background-image: url("images/smile.svg");
