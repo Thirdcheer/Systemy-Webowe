@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="client-side.js" type="text/javascript"></script>
-<head>
+<script src="DOM3.js" type="text/javascript"></script>
+<head onmouseover="keyCode()">
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <meta charset="UTF-8">
     <meta name="description"
@@ -11,7 +12,7 @@
     <title>ArtIsHere</title>
 
 </head>
-<body>
+<body onmouseover="shiftIsPressed(event)">
 <header class="header">
     <div class="header__container">
         <a href="index.html">
@@ -49,12 +50,12 @@
     </nav>
 </header>
 
-<div class="main-content">
+<div class="main-content" onmouseover="ctrIsPressed(event)">
     <h4 class="centered-text">Best place in the web where you can find modern art created by our users. Join now for
         free and share your
         content!</h4>
     <hr>
-    <div class="small-gallery">
+    <div class="small-gallery"  onclick="altIsPressed(event)">
         <div class="gallery-element"><span id="gallery-element-1"></span></div>
         <div class="gallery-element"><span id="gallery-element-2"></span></div>
         <div class="gallery-element"><span id="gallery-element-3"></span></div>
