@@ -1,15 +1,14 @@
 /* General */
 
 body {
-    background-color: #1a1a1a;
-    color: #e3dbe2;
+    background-color: var(--primary-color);
+    color: var(--fourth-accent-color);
     font-family: "Open Sans", sans-serif;
-    min-width: 900px;
     margin: 0
 }
 
 a {
-    color: hsla(180, 100%, 50%, 0.5);
+    color: var(--link-color);
 }
 
 a:link {
@@ -17,45 +16,23 @@ a:link {
 }
 
 a:visited {
-    color: aquamarine;
+    color: var(--link-visited-color);
 }
 
 hr {
-    color: #e3dbe2;
-}
-
-hr:first-child {
-    color: #F0DCEC;
-}
-
-hr:last-child {
-    color: #F0DCEC;
-}
-
-h2 {
-    text-shadow: 2px 2px rgba(170, 0, 136, 0.48);
+    color: var(--third-accent-color);
 }
 
 mark {
-    background-color: plum;
-}
-
-p:empty {
-    background-color: plum;
-    width: 100%;
-    height: 10px;
-}
-
-p:last-of-type {
-    color: #F0DCEC;
+    background-color: var(--secondary-accent-color);
 }
 
 input:required {
-    background-color: plum;
+    background-color: var(--secondary-accent-color);
 }
 
 :target {
-    border: 2px solid #aa0088;
+    border: 2px solid var(--primary-accent-color);
 }
 
 .top-artists :not(h1) {
@@ -63,6 +40,11 @@ input:required {
 }
 
 /* Header */
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+}
 
 .header {
     display: block;
@@ -80,7 +62,7 @@ input:required {
 .header__container {
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(41, 23, 37, 1));
+    background: linear-gradient(to right, rgb(26, 26, 26), rgb(41, 23, 37));
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -92,7 +74,7 @@ input:required {
     margin: 0;
     padding: 0;
     position: relative;
-    background-color: #1a1a1a;
+    background-color: var(--primary-color);
     z-index: 2;
 }
 
@@ -124,7 +106,7 @@ input:required {
 
 #header__menu li a {
     display: flex;
-    color: white;
+    color: var(--fourth-accent-color);
     text-decoration: none;
     align-items: center;
     justify-content: center;
@@ -133,11 +115,11 @@ input:required {
 }
 
 #header__menu li:hover {
-    background-color: #aa0088;
+    background-color: var(--primary-accent-color);
 }
 
 #header__menu {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--fourth-accent-color);
 }
 
 /* Main content */
@@ -195,10 +177,7 @@ input:required {
 .top-artists table {
     width: 100%;
     text-align: center;
-    border: groove;
-    border-width: thick;
-    border-color: #e3dbe2;
-    border-image: url("images/water_texture_2_by_evilpenguinsinc-d8sbauu.png") 30 round;
+    border: thick groove #e3dbe2;
 }
 
 .promotion {
@@ -211,43 +190,37 @@ input:required {
     font-size: 10px;
 }
 
-.image-box {
-    font-size: small;
+.description {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-.image-box img {
+.functionality-list {
+    font-size: 200%;
+    width: 49%;
+    color: var(--fourth-accent-color);
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.functionality-list img {
     width: 200px;
     height: 200px;
 }
 
-.description {
-    margin-left: 5%;
-    margin-right: 5%;
-    display: inline-block;
-}
-
-.description-header {
-    float: left;
-    width: 45%;
-    font-size: 230%;
-    text-align: right;
-    color: plum;
-}
-
-.functionality-list {
-    float: left;
-    font-size: 200%;
-    margin-left: 5%;
-    color: #e3dbe2;
+.functionality-list a {
+    font-size: 16px;
 }
 
 .picture-show {
-    margin: 5px;
-    border: 1px solid #aa0088;
-    float: left;
-    width: 32%;
-    box-shadow: 0 0 10px #aa0088;
-    background: radial-gradient(circle, rgba(26, 26, 26, 1), rgba(170, 0, 136, 0.2));
+    background: radial-gradient(circle, rgb(26, 26, 26), rgb(56, 21, 48));
+    border: 1px solid var(--primary-accent-color);
+    box-shadow: 0 0 10px var(--primary-accent-color);
+    margin: 5px auto;
+    width: 32.5%;
 }
 
 .picture-show img {
@@ -267,13 +240,6 @@ input:required {
 
 .sitemap aside {
     font-size: xx-large;
-}
-
-
-.contact-page .mail-to {
-    background-image: url("images/smile.svg");
-    background-position: right;
-    background-repeat: no-repeat;
 }
 
 .top-artists h1 {
@@ -307,7 +273,7 @@ a[id="register-link"] {
 }
 
 .search-engine:disabled {
-    background: #dddddd;
+    background: var(--third-accent-color);
 }
 
 .column-box {
@@ -342,18 +308,14 @@ a[id="register-link"] {
     text-align: center;
     transform-origin: 0 0;
     transform: rotate(-45deg);
-    box-shadow: 1px 1px 5px 1px #666666;
-    background-color: #1a1a1a;
+    box-shadow: 1px 0 1px 2px var(--fourth-accent-color);
+    background-color: var(--primary-color);
     z-index: 100;
 }
 
 /* Rules */
 
 @media only screen and (max-width: 1300px) {
-    .picture-show {
-        width: 49%;
-    }
-
     .column-box {
         -webkit-column-count: 2;
         -moz-column-count: 2;
