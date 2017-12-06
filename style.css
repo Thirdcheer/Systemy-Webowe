@@ -319,17 +319,6 @@ a[id="register-link"] {
 
 /* Rules */
 
-:root {
-    --main-color: #666666;
-    --primary-color: #1a1a1a;
-    --primary-accent-color: #aa0088;
-    --secondary-accent-color: #dda0dd;
-    --third-accent-color: #f0dcec;
-    --fourth-accent-color: #e3dbe2;
-    --link-color: #7fffd4;
-    --link-visited-color: #00ffff;
-}
-
 @media only screen and (max-width: 1300px) {
     .column-box {
         -webkit-column-count: 2;
