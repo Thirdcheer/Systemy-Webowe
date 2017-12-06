@@ -1,6 +1,8 @@
 var t1 = performance.now();
 var maxColor = 256 ** 3 - 1;
 
+setTheme(localStorage.getItem('theme'));
+
 function onSubmit() {
     window.alert("Registered successfully!");
 }
@@ -92,3 +94,43 @@ window.addEventListener("load", function () {
         console.log("Login button hovered");
     });
 });
+
+function changeTheme() {
+    if (localStorage.getItem('theme') === 'dark') {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+
+    setTheme(localStorage.getItem('theme'));
+}
+
+function setTheme(theme) {
+    if (theme === 'light') {
+        setLightTheme();
+    } else if (theme === 'dark' || theme === undefined) {
+        setDarkTheme();
+    }
+}
+
+function setLightTheme() {
+    document.documentElement.style.setProperty('--main-color', '#666666');
+    document.documentElement.style.setProperty('--primary-color', '#e3dbe2');
+    document.documentElement.style.setProperty('--primary-accent-color', '#1a1a1a');
+    document.documentElement.style.setProperty('--secondary-accent-color', '#dda0dd');
+    document.documentElement.style.setProperty('--third-accent-color', '#f0dcec');
+    document.documentElement.style.setProperty('--fourth-accent-color', '#aa0088');
+    document.documentElement.style.setProperty('--link-color', '#7fffd4');
+    document.documentElement.style.setProperty('--link-visited-color', '#00ffff');
+}
+
+function setDarkTheme() {
+    document.documentElement.style.setProperty('--main-color', '#666666');
+    document.documentElement.style.setProperty('--primary-color', '#1a1a1a');
+    document.documentElement.style.setProperty('--primary-accent-color', '#aa0088');
+    document.documentElement.style.setProperty('--secondary-accent-color', '#dda0dd');
+    document.documentElement.style.setProperty('--third-accent-color', '#f0dcec');
+    document.documentElement.style.setProperty('--fourth-accent-color', '#e3dbe2');
+    document.documentElement.style.setProperty('--link-color', '#7fffd4');
+    document.documentElement.style.setProperty('--link-visited-color', '#00ffff');
+}
