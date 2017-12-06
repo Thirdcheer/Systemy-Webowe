@@ -108,7 +108,7 @@ function changeTheme() {
 function setTheme(theme) {
     if (theme === 'light') {
         setLightTheme();
-    } else if (theme === 'dark' || theme === undefined) {
+    } else if (theme === 'dark' || theme === null) {
         setDarkTheme();
     }
 }
