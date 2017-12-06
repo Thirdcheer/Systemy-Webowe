@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }
       }
 }
+
 echo "<h2>Twoje odpowiedzi: </h2>";
 echo "<br>"
 echo $_POST['artist'];
@@ -26,4 +27,6 @@ echo $_POST['favcolor'];
 echo $_POST['birthmonth'];
 echo $_POST['satisfaction'];
 echo $_POST['homepage'];
+
+
 ?>
