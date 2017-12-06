@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="client-side.js" type="text/javascript"></script>
+<script src="DOM5.js" type="text/javascript"></script>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <meta charset="UTF-8">
@@ -57,16 +58,17 @@
     <div id="sign-up">
         <h3>Sign up now for more awesome content!</h3>
 
-        <form method="POST" autocomplete="on">
+        <div id="formsHint"></div>
+        <form id="register_form" method="POST" autocomplete="on">
             <fieldset>
                 <legend>Personal data</legend>
-                <input  type="text" name="firstname" title="Name" autofocus required> Name<br>
+                <input  onfocus="focuser(1)" onblur="blurer()" type="text" name="firstname" title="Name" autofocus required> Name<br>
                 <br>
-                <input type="text" name="lastname" title="Surname" required> Surname<br>
+                <input onfocus="focuser(2)" onblur="blurer()" type="text" name="lastname" title="Surname" required> Surname<br>
                 <br>
-                <input type="text" name="nick" title="Nick"> Nick<br>
+                <input onfocus="focuser(3)" onblur="blurer()"type="text" name="nick" title="Nick"> Nick<br>
                 <br>
-                <input type="password" name="pass" title="Password"> Password<br>
+                <input onfocus="focuser(4)" onblur="blurer()"type="password" name="pass" title="Password"> Password<br>
                 <br>
                 <input list="month" name="month" title="Month of birth"> Month of birth<br>
                 <datalist id="month">
@@ -127,8 +129,8 @@
                 <input type="checkbox" checked="checked" name="mentoring" class="mentoring-checkbox" title="I want to participate in ArtIsHere mentoring program"><b>I want to participate in ArtIsHere mentoring program</b>
             </fieldset>
 
-            <input class="button" onclick="onSubmit()" id="submit-btn" type="submit" value="Submit">
-            <input class="button"  type="reset" value="Reset"><br>
+            <input class="button" onclick="submitter()" id="submit-btn" type="submit" value="Submit">
+            <input class="button" onclick="resetter()" type="reset" value="Reset"><br>
         </form>
     </div>
     <div class="promotion">

@@ -242,10 +242,6 @@ input:required {
     font-size: xx-large;
 }
 
-.about-page .main-content {
-    background-origin: content-box;
-}
-
 .top-artists h1 {
     position: static;
     line-height: 50px;

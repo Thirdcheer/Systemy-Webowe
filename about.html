@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="client-side.js" type="text/javascript"></script>
+<script src="DOM1.js" type="text/javascript"></script>
+<script src="DOM3.js" type="text/javascript"></script>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <meta charset="UTF-8">
@@ -10,7 +12,7 @@
     <meta name="author" content="Karolina Malanowska, Michał Regulski">
     <title>About</title>
 </head>
-<body class="about-page">
+<body class="about-page" onkeydown="getUnicode(event)" onclick="coords(event)">
 <header class="header">
     <div class="header__container">
         <a href="index.html">
@@ -20,7 +22,7 @@
             <h2>Log in</h2>
             <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
             <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
-            <button id="login-button" type="submit" tabindex="3">
+            <button id="login-button" type="submit" tabindex="3" onclick="getUnicode(event)">
                 Log In
             </button>
             <button onclick="changeTheme()">Change style</button>
@@ -51,47 +53,10 @@
 
 <div class="main-content">
     <hr>
-    <h4 class="centered-text">
-        Best place in the web where you can find modern art created by our users. Join now for free and share your
-        content!
-    </h4>
-    <hr>
-    <div class="description">
-        <div class="functionality-list">
-            <ul>
-                <li>
-                    Art Is Here is the best place for artists. It doesn't matter if you're a beginner or profesionalist.
-                    Our website gives you a lot of functionalities:
-                </li>
-            </ul>
-        </div>
-        <div class="functionality-list">
-            <ol type="1">
-                <li>Post your art on the website</li>
-                <li>Give it a name and some description</li>
-                <li>Share it with the world!</li>
-                <li>Wait for opinions</li>
-                <li>Give permissions to share your art anywhere</li>
-                <li>Be famous with your art!</li>
-            </ol>
-        </div>
-        <div class="functionality-list">
-            <img src="https://images.fineartamerica.com/images-medium-large-5/square-pug-banner-art.jpg"
-                 alt="Mops squared"/>
-            <br>
-            <a href="https://images.fineartamerica.com/images-medium-large-5/square-pug-banner-art.jpg" download>
-                Download this image with HTTP
-            </a>
-        </div>
-        <div class="functionality-list">
-            <img src="images/mops.jpg" alt="Mops"/><br>
-            <a href="ftp://unaux_20820530:lubieplacki123@ftp.unaux.com/htdocs/mops.jpg">
-                Download this image with FTP
-            </a>
-        </div>
-    </div>
-    <hr>
+    <div id="show_unicode"></div>
+    <button id="createButton" onclick="aboutClickMe()">Pokaż obrazek</button>
     <div class="promotion">
+        <hr>
         <p>Check out our website! <a href="register.html" id="register-link">Register now!</a></p>
     </div>
     <hr>
