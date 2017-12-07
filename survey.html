@@ -50,10 +50,18 @@
 </header>
 
 <div class="main-content">
-    <form method="POST" autocomplete="on" id="survay-form">
+    <form method="POST" action="survey-form.php" autocomplete="on" id="survey-form">
         <fieldset>
             <legend>Tell us your preferences</legend>
-            <input type="text" name="artist" placeholder="Who is your favourite artist?"> <br>
+            Who is your favourite top artist?<br>
+            <select name="artist">
+                <option value="Zdzisław Kropka">Zdzisław Kropka</option>
+                <option value="Stefan Kopytko">Stefan Kopytko</option>
+                <option value="Waldemar Gąbka">Waldemar Gąbka</option>
+                <option value="Andrzej Kochanek">Andrzej Kochanek</option>
+                <option value="Michał Pietraszko">Michał Pietraszko</option>
+                <option value="Barbara Mazur">Barbara Mazur</option>
+            </select><br>
             <br>
             What is your favourite colour?<br>
             <input type="color" name="favcolor" title="Choose a color"><br>
@@ -61,11 +69,32 @@
             In which month were you born?<br>
             <input type="month" name="birthmonth" title="Choose your month of your birth"><br>
             <br>
-            How much do you like this page? <input type="range" name="satisfaction" title="Satisfaction" min="0" max="10"><br>
+            How much do you like this page?<br>
+            <input type="range" name="satisfaction" title="Satisfaction" min="0" max="10"><br>
             <br>
-            Do you have your own website? <input type="url" name="homepage" title="Type in your URL" placeholder="Write url here"><br>
+            Do you have your own website?<br>
+            <input type="url" name="homepage" title="Type in your URL" placeholder="Write url here"><br>
             <br>
-            <input type="submit" id="survay-button"><br>
+            Choose types you are into:<br>
+            <input type="checkbox" name="types[]" value="ceramics">Ceramics<br>
+            <input type="checkbox" name="types[]" value="drawing">Drawing<br>
+            <input type="checkbox" name="types[]" value="photography">Photography<br>
+            <input type="checkbox" name="types[]" value="sculpture">Sculpture<br>
+            <input type="checkbox" name="types[]" value="video">Video<br>
+            <br>
+            Choose categories you want to follow:<br>
+            <input type="checkbox" name="categories[]" value="abstraction">Abstraction<br>
+            <input type="checkbox" name="categories[]" value="architecture">Architecture<br>
+            <input type="checkbox" name="categories[]" value="fashion">Fashion<br>
+            <input type="checkbox" name="categories[]" value="nature">Nature<br>
+            <br>
+            How much time you spend on creating art? (per week):<br>
+            <input type="radio" name="time" value="0-4">0-4<br>
+            <input type="radio" name="time" value="5-8">5-8<br>
+            <input type="radio" name="time" value="9-16">9-16<br>
+            <input type="radio" name="time" value="16+">16+<br>
+            <br>
+            <input type="submit" id="survey-button"><br>
         </fieldset>
     </form>
 
