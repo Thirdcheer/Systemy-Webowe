@@ -73,12 +73,10 @@
             $birthmonth = $_POST['birthmonth'];
             $satisfaction = $_POST['satisfaction'];
             $homepage = $_POST['homepage'];
-            $types = $_POST['types'];
-            $categories = $_POST['categories'];
             $types_str = "";
             $categories_str = "";
 
-            if (!preg_match("/^#{1}[a-zA-Z0-9]{6}$/", $favcolor)) {
+            if (!preg_match("/^#{1}[a-fA-F0-9]{6}$/", $favcolor)) {
                 throw new InvalidArgumentException("Color is not in HEX");
             } else {
                 $favcolor = checkColor($favcolor);
@@ -96,7 +94,10 @@
                 throw new InvalidArgumentException("Birthmonth is empty");
             }
 
-            if ($types != null && $categories != null) {
+            if (isset($_POST['types']) && isset($_POST['categories'])) {
+                $types = $_POST['types'];
+                $categories = $_POST['categories'];
+            
                 foreach ($types as $type) {
                     $types_str .= "$type, ";
                 }
@@ -138,10 +139,6 @@
             default:
                 return $color;
         }
-    }
-
-    function youShouldNotCallThis() {
-        die("Server has been closed.");
     }
 
     try {
