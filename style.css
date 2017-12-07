@@ -313,6 +313,10 @@ a[id="register-link"] {
     z-index: 100;
 }
 
+#result-table {
+    text-align: left;
+}
+
 /* Rules */
 
 @media only screen and (max-width: 1300px) {
