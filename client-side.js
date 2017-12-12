@@ -66,13 +66,13 @@ function makeARandomMosaic() {
 
     try {
         if (checkInt(red) && checkInt(green) && checkInt(blue)) {
-            colorFunction = function() {
+            colorFunction = function () {
                 return "rgb(" + red + ", " + green + ", " + blue + ")";
             };
         }
     } catch (e) {
         window.alert("It's okey. Enjoy Math.random()");
-        colorFunction = function() {
+        colorFunction = function () {
             return getColorFromFloat(Math.random());
         };
     }
@@ -85,12 +85,12 @@ function makeARandomMosaic() {
     }
 }
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     var t2 = performance.now();
     console.log("Loading takes " + (t2 - t1).toString() + " ms");
 
     var button = document.getElementById("login-button");
-    button.addEventListener("mouseover", function() {
+    button.addEventListener("mouseover", function () {
         console.log("Login button hovered");
     });
 });
@@ -151,7 +151,6 @@ function setLightTheme() {
     document.documentElement.style.setProperty('--fourth-accent-color', '#aa0088');
     document.documentElement.style.setProperty('--link-color', '#7fffd4');
     document.documentElement.style.setProperty('--link-visited-color', '#00ffff');
-
 }
 
 function setDarkTheme() {
@@ -163,5 +162,4 @@ function setDarkTheme() {
     document.documentElement.style.setProperty('--fourth-accent-color', '#e3dbe2');
     document.documentElement.style.setProperty('--link-color', '#7fffd4');
     document.documentElement.style.setProperty('--link-visited-color', '#00ffff');
-
 }

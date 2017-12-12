@@ -16,15 +16,12 @@
     if(isset($_COOKIE['theme'])) {
         if($_COOKIE['theme'] == 'light'){
             echo '<script>setLightTheme();</script>'; 
-            echo '<title>ArtIsHere - Light theme</title>';
         }
         else if($_COOKIE['theme'] == 'dark'){
             echo '<script>setDarkTheme();</script>';
-            echo '<title>ArtIsHere - Dark theme</title>';
         }
     }
     else{
-        echo '<title>ArtIsHere - no theme</title>';
         setcookie('theme', 'dark',ime() + 60, "/web");
     } 
     ?>
