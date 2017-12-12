@@ -66,13 +66,13 @@ function makeARandomMosaic() {
 
     try {
         if (checkInt(red) && checkInt(green) && checkInt(blue)) {
-            colorFunction = function () {
+            colorFunction = function() {
                 return "rgb(" + red + ", " + green + ", " + blue + ")";
             };
         }
     } catch (e) {
         window.alert("It's okey. Enjoy Math.random()");
-        colorFunction = function () {
+        colorFunction = function() {
             return getColorFromFloat(Math.random());
         };
     }
@@ -85,24 +85,53 @@ function makeARandomMosaic() {
     }
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
     var t2 = performance.now();
     console.log("Loading takes " + (t2 - t1).toString() + " ms");
 
     var button = document.getElementById("login-button");
-    button.addEventListener("mouseover", function () {
+    button.addEventListener("mouseover", function() {
         console.log("Login button hovered");
     });
 });
 
-function changeTheme() {
-    if (localStorage.getItem('theme') === 'dark') {
-        localStorage.setItem('theme', 'light');
-    } else {
-        localStorage.setItem('theme', 'dark');
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
+    return "";
+}
 
-    setTheme(localStorage.getItem('theme'));
+function setCookie(name, val, sek) {
+    if (sek) {
+        var data = new Date();
+        data.setTime(data.getTime() + (sek * 60 * 1000));
+        var expires = "; expires=" + data.toGMTString();
+    } else {
+        var expires = "";
+    }
+    document.cookie = name + "=" + val + expires + "; path=/web";
+}
+
+function changeTheme() {
+    console.log(getCookie('theme'));
+    if (getCookie('theme') === 'dark') {
+        setCookie('theme', 'light', 60);
+        console.log(getCookie('theme') + "light cookie");
+    } else {
+        setCookie('theme', 'dark', 1);
+        console.log(getCookie('theme') + "dark cookie");
+    }
+    setTheme(getCookie('theme'));
 }
 
 function setTheme(theme) {
@@ -122,6 +151,7 @@ function setLightTheme() {
     document.documentElement.style.setProperty('--fourth-accent-color', '#aa0088');
     document.documentElement.style.setProperty('--link-color', '#7fffd4');
     document.documentElement.style.setProperty('--link-visited-color', '#00ffff');
+
 }
 
 function setDarkTheme() {
@@ -133,4 +163,5 @@ function setDarkTheme() {
     document.documentElement.style.setProperty('--fourth-accent-color', '#e3dbe2');
     document.documentElement.style.setProperty('--link-color', '#7fffd4');
     document.documentElement.style.setProperty('--link-visited-color', '#00ffff');
+
 }
