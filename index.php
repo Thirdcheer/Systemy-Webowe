@@ -22,7 +22,7 @@
         }
     }
     else{
-        setcookie('theme', 'dark',ime() + 60, "/web");
+        setcookie('theme', 'dark',time() + 60, "/web");
     } 
     ?>
 </head>
