@@ -13,26 +13,57 @@
 <body>
 <header class="header">
     <div class="header__container">
-        <a href="index.html">
+        <a href="index.php">
             <img id="logo" src="images/logo.png" alt="Logo"/>
         </a>
         <div class="login-box">
-            <h2>Log in</h2>
-            <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
-            <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
-            <button id="login-button" type="submit" tabindex="3">
-                Log In
-            </button>
+        <?php 
+        session_start();
+                if(!isset($_SESSION['logged'])) {
+                    echo '<h2>Log in</h2>';
+                    echo '<form class="block" id="loginform" method="POST" action="login.php">
+                    <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
+                    <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
+                    <button id="login-button" type="submit" name="submitLogin" tabindex="3">Log in </button>
+                    </form>';
+                }
+                if(isset($_SESSION['logged']) && $_SESSION['logged'] == false) { 
+                    echo '<h2>Wrong login or password</h2>';
+                    echo '<form class="block" id="loginform" method="POST" action="login.php">
+                    <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
+                    <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
+                    <button id="login-button" type="submit" name="submitLogin" tabindex="3">Log in </button>
+                    </form>';
+                }
+                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) { 
+                    echo '<h2>You are logged as: ';
+                    echo $_SESSION['login'];
+                    echo '</h2>';      
+                    echo '<a href=index.php?logout=true id="logout" name="logout">Logout</a>';       
+                }
+
+                if(isset($_GET['logout'])){
+                    $_SESSION['login'] = "";
+                    $_SESSION['password'] = "";
+                
+                   if($_SESSION['logged'] == true) {
+                    unset($_SESSION['logged']);
+                    unset($_POST['logout']);
+                    header('Location: survey.php');
+                   }
+                } 
+                ?>
+        </button>
             <button onclick="changeTheme()">Change style</button>
         </div>
     </div>
     <nav id="header__menu">
         <ul>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="sitemap.html">Sitemap</a></li>
-            <li><a href="survey.html">Survey</a></li>
+            <li><a href="gallery.php">Gallery</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="sitemap.php">Sitemap</a></li>
+            <li><a href="survey.php">Survey</a></li>
             <li><a href="#">Dropdown</a>
                 <ul>
                     <li><a href="#">Sub 1</a></li>

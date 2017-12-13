@@ -9,7 +9,7 @@ function onSubmit() {
 
 function checkOutChange() {
     var p = document.getElementById('checkout');
-    p.innerHTML = "Join us! <a href=\"register.html\" id=\"register-link\"> Register now!</a>";
+    p.innerHTML = "Join us! <a href=\"register.php\" id=\"register-link\"> Register now!</a>";
 }
 
 
@@ -66,13 +66,13 @@ function makeARandomMosaic() {
 
     try {
         if (checkInt(red) && checkInt(green) && checkInt(blue)) {
-            colorFunction = function () {
+            colorFunction = function() {
                 return "rgb(" + red + ", " + green + ", " + blue + ")";
             };
         }
     } catch (e) {
         window.alert("It's okey. Enjoy Math.random()");
-        colorFunction = function () {
+        colorFunction = function() {
             return getColorFromFloat(Math.random());
         };
     }
@@ -85,12 +85,12 @@ function makeARandomMosaic() {
     }
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
     var t2 = performance.now();
     console.log("Loading takes " + (t2 - t1).toString() + " ms");
 
     var button = document.getElementById("login-button");
-    button.addEventListener("mouseover", function () {
+    button.addEventListener("mouseover", function() {
         console.log("Login button hovered");
     });
 });

@@ -13,7 +13,7 @@
 <body>
 <header class="header">
     <div class="header__container">
-        <a href="index.html">
+        <a href="index.php">
             <img id="logo" src="images/logo.png" alt="Logo"/>
         </a>
         <div class="login-box">
@@ -28,11 +28,12 @@
     </div>
     <nav id="header__menu">
         <ul>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="sitemap.html">Sitemap</a></li>
-            <li><a href="survey.html">Survey</a></li>
+        <li><a href="gallery.php">Gallery</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="sitemap.php">Sitemap</a></li>
+        <li><a href="survey.php">Survey</a></li>
+        <li><a href="#">Dropdown</a>
             <li><a href="#">Dropdown</a>
                 <ul>
                     <li><a href="#">Sub 1</a></li>
