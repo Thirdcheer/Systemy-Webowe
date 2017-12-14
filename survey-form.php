@@ -9,6 +9,18 @@
     <meta name="keywords" content="Art, Beauty, Photography, Gallery, Graphics, Wallpapers, Drawing">
     <meta name="author" content="Karolina Malanowska, Michał Regulski">
     <title>Survey</title>
+    <?php
+    session_start();
+    if (isset($_COOKIE['theme'])) {
+        if ($_COOKIE['theme'] == 'light') {
+            echo '<script>setLightTheme();</script>';
+        } else if ($_COOKIE['theme'] == 'dark') {
+            echo '<script>setDarkTheme();</script>';
+        }
+    } else {
+        setcookie('theme', 'dark', 0, "/");
+    }
+    ?>
 </head>
 <body>
 <header class="header">

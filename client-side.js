@@ -111,19 +111,18 @@ function getCookie(cname) {
     return "";
 }
 
-function setCookie(name, val, sek) {
-    if (sek) {
-        var data = new Date();
-        data.setTime(data.getTime() + (sek * 60 * 1000));
-        var expires = "; expires=" + data.toGMTString();
+function setCookie(name, val, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 3600 * 1000));
+        var expires = "; expires=" + date.toGMTString();
     } else {
         var expires = "";
     }
-    document.cookie = name + "=" + val + expires + "; path=/web";
+    document.cookie = name + "=" + val + expires;
 }
 
 function changeTheme() {
-    console.log(getCookie('theme'));
     if (getCookie('theme') === 'dark') {
         setCookie('theme', 'light', 60);
         console.log(getCookie('theme') + "light cookie");

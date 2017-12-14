@@ -9,6 +9,18 @@
     <meta name="keywords" content="Art, Beauty, Photography, Gallery, Graphics, Wallpapers, Drawing">
     <meta name="author" content="Karolina Malanowska, Michał Regulski">
     <title>Survey</title>
+    <?php
+    session_start();
+    if (isset($_COOKIE['theme'])) {
+        if ($_COOKIE['theme'] == 'light') {
+            echo '<script>setLightTheme();</script>';
+        } else if ($_COOKIE['theme'] == 'dark') {
+            echo '<script>setDarkTheme();</script>';
+        }
+    } else {
+        setcookie('theme', 'dark', 0, "/");
+    }
+    ?>
 </head>
 <body>
 <header class="header">
@@ -17,43 +29,31 @@
             <img id="logo" src="images/logo.png" alt="Logo"/>
         </a>
         <div class="login-box">
-        <?php 
-        session_start();
-                if(!isset($_SESSION['logged'])) {
-                    echo '<h2>Log in</h2>';
-                    echo '<form class="block" id="loginform" method="POST" action="login.php">
+            <?php
+            if (!isset($_SESSION['logged']) || isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
+                echo '<h2>Log in</h2>';
+                echo '<form class="block" id="loginform" method="POST" action="login.php">
                     <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
                     <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
                     <button id="login-button" type="submit" name="submitLogin" tabindex="3">Log in </button>
                     </form>';
-                }
-                if(isset($_SESSION['logged']) && $_SESSION['logged'] == false) { 
-                    echo '<h2>Wrong login or password</h2>';
-                    echo '<form class="block" id="loginform" method="POST" action="login.php">
-                    <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
-                    <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
-                    <button id="login-button" type="submit" name="submitLogin" tabindex="3">Log in </button>
-                    </form>';
-                }
-                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) { 
-                    echo '<h2>You are logged as: ';
-                    echo $_SESSION['login'];
-                    echo '</h2>';      
-                    echo '<a href=index.php?logout=true id="logout" name="logout">Logout</a>';       
-                }
+            } else if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+                $username = $_SESSION['login'];
+                echo "<h2>You are logged as: $username</h2>";
+                echo '<a href=index.php?logout=true id="logout" name="logout">Logout</a>';
+            }
 
-                if(isset($_GET['logout'])){
-                    $_SESSION['login'] = "";
-                    $_SESSION['password'] = "";
-                
-                   if($_SESSION['logged'] == true) {
+            if (isset($_GET['logout'])) {
+                $_SESSION['login'] = "";
+                $_SESSION['password'] = "";
+
+                if ($_SESSION['logged'] == true) {
                     unset($_SESSION['logged']);
                     unset($_POST['logout']);
                     header('Location: survey.php');
-                   }
-                } 
-                ?>
-        </button>
+                }
+            }
+            ?>
             <button onclick="changeTheme()">Change style</button>
         </div>
     </div>
