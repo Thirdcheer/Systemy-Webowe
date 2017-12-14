@@ -9,7 +9,7 @@ function onSubmit() {
 
 function checkOutChange() {
     var p = document.getElementById('checkout');
-    p.innerHTML = "Join us! <a href=\"register.html\" id=\"register-link\"> Register now!</a>";
+    p.innerHTML = "Join us! <a href=\"register.php\" id=\"register-link\"> Register now!</a>";
 }
 
 
@@ -66,13 +66,13 @@ function makeARandomMosaic() {
 
     try {
         if (checkInt(red) && checkInt(green) && checkInt(blue)) {
-            colorFunction = function () {
+            colorFunction = function() {
                 return "rgb(" + red + ", " + green + ", " + blue + ")";
             };
         }
     } catch (e) {
         window.alert("It's okey. Enjoy Math.random()");
-        colorFunction = function () {
+        colorFunction = function() {
             return getColorFromFloat(Math.random());
         };
     }
@@ -85,24 +85,52 @@ function makeARandomMosaic() {
     }
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
     var t2 = performance.now();
     console.log("Loading takes " + (t2 - t1).toString() + " ms");
 
     var button = document.getElementById("login-button");
-    button.addEventListener("mouseover", function () {
+    button.addEventListener("mouseover", function() {
         console.log("Login button hovered");
     });
 });
 
-function changeTheme() {
-    if (localStorage.getItem('theme') === 'dark') {
-        localStorage.setItem('theme', 'light');
-    } else {
-        localStorage.setItem('theme', 'dark');
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
+    return "";
+}
 
-    setTheme(localStorage.getItem('theme'));
+function setCookie(name, val, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 3600 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    } else {
+        var expires = "";
+    }
+    document.cookie = name + "=" + val + expires;
+}
+
+function changeTheme() {
+    if (getCookie('theme') === 'dark') {
+        setCookie('theme', 'light', 60);
+        console.log(getCookie('theme') + "light cookie");
+    } else {
+        setCookie('theme', 'dark', 1);
+        console.log(getCookie('theme') + "dark cookie");
+    }
+    setTheme(getCookie('theme'));
 }
 
 function setTheme(theme) {
