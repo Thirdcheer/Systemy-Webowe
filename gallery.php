@@ -83,14 +83,20 @@
 
 <div class="main-content">
 
-    <div id="statistics" >
-        <button id="images" onclick="statistics_images()">Obrazki</button>
-        <button onclick="statistics_links()">Linki</button>
-        <button onclick="statistics_forms()">Formularze</button>
-        <button onclick="statistics_anchor()">Kotwice</button>
-        <button onclick="statistics_item()">Podmień zdjęcie</button>
-    </div>
-
+    <?php
+    if (!isset($_SESSION['logged']) || isset($_SESSION['logged']) && $_SESSION['logged'] == false) {
+             echo ' <p style="color:red"> Log in to get more options </p> ';
+    }
+    else if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+                echo '<div id="statistics" >
+                <button id="images" onclick="statistics_images()">Obrazki</button>
+                <button onclick="statistics_links()">Linki</button>
+                <button onclick="statistics_forms()">Formularze</button>
+                <button onclick="statistics_anchor()">Kotwice</button>
+                <button onclick="statistics_item()">Podmień zdjęcie</button>
+                </div>';
+        }
+    ?>
     <div class="gallery">
         <div class="picture-show">
             <img id="first" src="images/gallery_images/beauty.jpg" alt="beauty" width="600" height="400">
