@@ -60,12 +60,12 @@
     </div>
     <nav id="header__menu">
         <ul>
-        <li><a href="gallery.php">Gallery</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a href="contact.php">Contact</a></li>
-        <li><a href="sitemap.php">Sitemap</a></li>
-        <li><a href="survey.php">Survey</a></li>
-        <li><a href="#">Dropdown</a>
+            <li><a href="gallery.php">Gallery</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="sitemap.php">Sitemap</a></li>
+            <li><a href="survey.php">Survey</a></li>
+            <li><a href="#">Dropdown</a>
                 <ul>
                     <li><a href="#">Sub 1</a></li>
                     <li><a href="#">Sub 2</a></li>
@@ -89,19 +89,14 @@
     <div id="sign-up">
         <h3>Sign up now for more awesome content!</h3>
 
-        <div id="formsHint"></div>
         <form id="register_form" method="POST" autocomplete="on">
             <fieldset>
                 <legend>Personal data</legend>
-                <input  onfocus="focuser(1)" onblur="blurer()" type="text" name="firstname" title="Name" autofocus required> Name<br>
-                <br>
-                <input onfocus="focuser(2)" onblur="blurer()" type="text" name="lastname" title="Surname" required> Surname<br>
-                <br>
-                <input onfocus="focuser(3)" onblur="blurer()"type="text" name="nick" title="Nick"> Nick<br>
-                <br>
-                <input onfocus="focuser(4)" onblur="blurer()"type="password" name="pass" title="Password"> Password<br>
-                <br>
-                <input list="month" name="month" title="Month of birth"> Month of birth<br>
+                <input onfocus="focuser(1)" onblur="blurer()" type="text" name="firstname" title="Name" autofocus required>Name<br>
+                <input onfocus="focuser(2)" onblur="blurer()" type="text" name="lastname" title="Surname" required>Surname<br>
+                <input onfocus="focuser(3)" onblur="blurer()" type="text" name="nick" title="Nick">Nick<br>
+                <input onfocus="focuser(4)" onblur="blurer()" type="password" name="pass" title="Password">Password<br>
+                <input list="month" name="month" title="Month of birth">Month of birth<br>
                 <datalist id="month">
                     <option>Styczeń</option>
                     <option>Luty</option>
@@ -116,11 +111,8 @@
                     <option>Listopad</option>
                     <option>Grudzień</option>
                 </datalist>
-                <br>
-                <input type="email" name="email" title="E-mail" required> E-mail<br>
-                <br>
-                <input type="tel" name="tel" title="Phone number (9 digits)" pattern="[0-9]{9}"> Phone number (9 digits)
-                <br>
+                <input type="email" name="email" title="E-mail" required>E-mail<br>
+                <input type="tel" name="tel" title="Phone number (9 digits)" pattern="[0-9]{9}">Phone number (9 digits)
             </fieldset>
             <br>
             <fieldset>
@@ -157,7 +149,9 @@
                 <b>Tell something more about you</b><br>
                 <textarea title="Description" maxlength="200">Description up to 200 chars</textarea><br>
                 <br>
-                <input type="checkbox" checked="checked" name="mentoring" class="mentoring-checkbox" title="I want to participate in ArtIsHere mentoring program"><b>I want to participate in ArtIsHere mentoring program</b>
+                <input type="checkbox" checked="checked" name="mentoring" class="mentoring-checkbox"
+                       title="I want to participate in ArtIsHere mentoring program"><b>I want to participate in
+                    ArtIsHere mentoring program</b>
             </fieldset>
 
             <input class="button" onclick="submitter()" id="submit-btn" type="submit" value="Submit">

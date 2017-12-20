@@ -317,6 +317,10 @@ a[id="register-link"] {
     text-align: left;
 }
 
+#register_form input {
+    margin: 8px 8px 8px 0;
+}
+
 /* Rules */
 
 @media only screen and (max-width: 1300px) {
