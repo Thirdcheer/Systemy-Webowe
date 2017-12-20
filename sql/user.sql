@@ -1,4 +1,6 @@
-CREATE TABLE User (
+CREATE SCHEMA default_schema;
+
+CREATE TABLE default_schema.User (
   id       BIGINT                             NOT NULL AUTO_INCREMENT,
   username VARCHAR(255) UNIQUE                NOT NULL,
   password VARCHAR(64)                        NOT NULL,
