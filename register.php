@@ -82,39 +82,49 @@
 </header>
 
 <div class="main-content">
-    <h4 class="centered-text">Best place in the web where you can find modern art created by our users. Join now for
-        free and share your
-        content!</h4>
-    <hr>
-    <div id="sign-up">
-        <h3>Sign up now for more awesome content!</h3>
+    <?php
 
-        <form id="register_form" method="POST" autocomplete="on">
-            <fieldset>
-                <legend>Personal data</legend>
-                <input onfocus="focuser(1)" onblur="blurer()" type="text" name="firstname" title="Name" autofocus required>Name<br>
-                <input onfocus="focuser(2)" onblur="blurer()" type="text" name="lastname" title="Surname" required>Surname<br>
-                <input onfocus="focuser(3)" onblur="blurer()" type="text" name="nick" title="Nick">Nick<br>
-                <input onfocus="focuser(4)" onblur="blurer()" type="password" name="pass" title="Password">Password<br>
-                <input list="month" name="month" title="Month of birth">Month of birth<br>
-                <datalist id="month">
-                    <option>Styczeń</option>
-                    <option>Luty</option>
-                    <option>Marzec</option>
-                    <option>Kwiecień</option>
-                    <option>Maj</option>
-                    <option>Czerwiec</option>
-                    <option>Lipiec</option>
-                    <option>Sierpień</option>
-                    <option>Wrzesień</option>
-                    <option>Październik</option>
-                    <option>Listopad</option>
-                    <option>Grudzień</option>
-                </datalist>
-                <input type="email" name="email" title="E-mail" required>E-mail<br>
-                <input type="tel" name="tel" title="Phone number (9 digits)" pattern="[0-9]{9}">Phone number (9 digits)
-            </fieldset>
-            <br>
+    $logged_in = isset($_SESSION['logged']) && $_SESSION['logged'] == true;
+
+    if (!$logged_in) {
+        echo '
+            <h4 class="centered-text">Best place in the web where you can find modern art created by our users. Join now for free and share your content!</h4>
+            <hr>
+            <div id="user-form">
+            <h3>Sign up now for more awesome content!</h3>
+        ';
+    } ?>
+
+    <form id="register_form" method="POST" autocomplete="on" action="">
+        <fieldset>
+            <legend>Personal data</legend>
+            <input onfocus="focuser(1)" onblur="blurer()" type="text" name="firstname" title="Name" autofocus required <?php if ($logged_in) echo 'value = "' . $_SESSION['name'] . '" ' ?>>Name<br>
+            <input onfocus="focuser(2)" onblur="blurer()" type="text" name="lastname" title="Surname" required <?php if ($logged_in) echo 'value = "' . $_SESSION['surname'] . '" ' ?>>Surname<br>
+            <input onfocus="focuser(3)" onblur="blurer()" type="text" name="nick" title="Nick" <?php if ($logged_in) echo 'value = "' . $_SESSION['login'] . '" ' ?> readonly>Nick<br>
+            <input onfocus="focuser(4)" onblur="blurer()" type="password" name="pass" title="Password">Password<br>
+            <input list="month" name="month" title="Month of birth" <?php if ($logged_in) echo 'value = "' . $_SESSION['month_of_birth'] . '"' ?>>Month of birth<br>
+            <datalist id="month">
+                <option>Styczeń</option>
+                <option>Luty</option>
+                <option>Marzec</option>
+                <option>Kwiecień</option>
+                <option>Maj</option>
+                <option>Czerwiec</option>
+                <option>Lipiec</option>
+                <option>Sierpień</option>
+                <option>Wrzesień</option>
+                <option>Październik</option>
+                <option>Listopad</option>
+                <option>Grudzień</option>
+            </datalist>
+            <input type="email" name="email" title="E-mail" required <?php if ($logged_in) echo 'value = "' . $_SESSION['email'] . '" ' ?>>E-mail<br>
+            <input type="tel" name="tel" title="Phone number (9 digits)" pattern="[0-9]{9}" <?php if ($logged_in) echo 'value = "' . $_SESSION['phone'] . '" ' ?>>Phone number (9 digits)
+        </fieldset>
+        <br>
+
+        <?php
+        if (!$logged_in) {
+            echo '
             <fieldset>
                 <legend>Profile data</legend>
                 <b>What type of art do you like the most?</b>
@@ -125,44 +135,49 @@
                         <option value="Canvas">On canvas</option>
                         <option value="Applied">Applied art</option>
                     </optgroup>
-
+    
                     <optgroup label="Digital art">
                         <option value="Paint">Digital painting</option>
                         <option value="Raw">Raw graphics</option>
                         <option value="Vector">Vector graphics</option>
                     </optgroup>
-
+    
                     <optgroup label="Animation">
                         <option value="Traditional">Traditional animation</option>
                         <option value="Digital">Digital animation</option>
                     </optgroup>
                 </select><br><br>
-
+    
                 <b>Who are you?</b><br>
-
+    
                 <input type="radio" name="artist" title="Artist">Artist<br>
                 <input type="radio" name="student" title="Student">Student<br>
                 <input type="radio" name="teacher" title="Teacher">Teacher<br>
                 <input type="radio" name="random" title="Random person">Random person<br>
                 <br>
-
+    
                 <b>Tell something more about you</b><br>
                 <textarea title="Description" maxlength="200">Description up to 200 chars</textarea><br>
                 <br>
-                <input type="checkbox" checked="checked" name="mentoring" class="mentoring-checkbox"
-                       title="I want to participate in ArtIsHere mentoring program"><b>I want to participate in
-                    ArtIsHere mentoring program</b>
-            </fieldset>
+                <input type="checkbox" checked="checked" name="mentoring"
+                       title="I want to participate in ArtIsHere mentoring program">
+                <b>I want to participate in ArtIsHere mentoring program</b>
+            </fieldset>';
+        }
+        ?>
 
-            <input class="button" onclick="submitter()" id="submit-btn" type="submit" value="Submit">
-            <input class="button" onclick="resetter()" type="reset" value="Reset"><br>
-        </form>
-    </div>
-    <div class="promotion">
-        <p>Check out our website! <a href="register.php" id="register-link">Register now!</a></p>
-    </div>
-    <hr>
+        <input class="button" onclick="submitter()" id="submit-btn" type="submit" value="Submit">
+        <input class="button" onclick="resetter()" type="reset" value="Reset"><br>
+    </form>
 </div>
+
+<?php
+if ($logged_in) {
+    echo '<div class="promotion">
+    <p>Check out our website! <a href="register.php" id="register-link">Register now!</a></p>
+</div>';
+}
+?>
 
 <footer class="main-footer" id="main-footer">
     <div class="bottom-footer">

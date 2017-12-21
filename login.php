@@ -30,7 +30,7 @@ if (isset($_POST['submitLogin'])) {
             $_SESSION['password'] = '';
             $_SESSION['name'] = $row['name'];
             $_SESSION['surname'] = $row['surname'];
-            $_SESSION['month_of_bith'] = $row['month_of_birth'];
+            $_SESSION['month_of_birth'] = $row['month_of_birth'];
             $_SESSION['phone'] = $row['phone'];
             $_SESSION['email'] = $row['email'];
 
