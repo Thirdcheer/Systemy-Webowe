@@ -267,11 +267,6 @@ a[id="register-link"] {
     text-decoration: none;
 }
 
-.mentoring-checkbox:checked {
-    height: 25px;
-    width: 25px;
-}
-
 .search-engine:disabled {
     background: var(--third-accent-color);
 }
