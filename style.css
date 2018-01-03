@@ -1,14 +1,15 @@
 /* General */
 
 body {
-    background-color: var(--primary-color);
-    color: var(--fourth-accent-color);
+    background-color: #1a1a1a;
+    color: #e3dbe2;
     font-family: "Open Sans", sans-serif;
+    min-width: 900px;
     margin: 0
 }
 
 a {
-    color: var(--link-color);
+    color: hsla(180, 100%, 50%, 0.5);
 }
 
 a:link {
@@ -16,35 +17,53 @@ a:link {
 }
 
 a:visited {
-    color: var(--link-visited-color);
+    color: aquamarine;
 }
 
 hr {
-    color: var(--third-accent-color);
+    color: #e3dbe2;
+}
+
+hr:first-child {
+    color: #F0DCEC;
+}
+
+hr:last-child {
+    color: #F0DCEC;
+}
+
+h2 {
+    text-shadow: 2px 2px rgba(170, 0, 136, 0.48);
 }
 
 mark {
-    background-color: var(--secondary-accent-color);
+    background-color: plum;
+}
+
+p:empty {
+    background-color: plum;
+    width: 100%;
+    height: 10px;
+}
+
+p:last-of-type {
+    color: #F0DCEC;
 }
 
 input:required {
-    background-color: var(--secondary-accent-color);
+    background-color: plum;
 }
 
 :target {
-    border: 2px solid var(--primary-accent-color);
+    border: 2px solid #aa0088;
 }
 
 .top-artists :not(h1) {
     font-style: normal;
 }
 
-/* Header */
 
-.gallery {
-    display: flex;
-    flex-flow: row wrap;
-}
+/* Header */
 
 .header {
     display: block;
@@ -62,7 +81,7 @@ input:required {
 .header__container {
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to right, rgb(26, 26, 26), rgb(41, 23, 37));
+    background: linear-gradient(to right, rgba(26, 26, 26, 1), rgba(41, 23, 37, 1));
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -74,7 +93,7 @@ input:required {
     margin: 0;
     padding: 0;
     position: relative;
-    background-color: var(--primary-color);
+    background-color: #1a1a1a;
     z-index: 2;
 }
 
@@ -95,7 +114,7 @@ input:required {
     left: 100%;
 }
 
-#header__menu ul li:hover > ul {
+#header__menu ul li:hover>ul {
     display: block;
 }
 
@@ -106,7 +125,7 @@ input:required {
 
 #header__menu li a {
     display: flex;
-    color: var(--fourth-accent-color);
+    color: white;
     text-decoration: none;
     align-items: center;
     justify-content: center;
@@ -115,12 +134,13 @@ input:required {
 }
 
 #header__menu li:hover {
-    background-color: var(--primary-accent-color);
+    background-color: #aa0088;
 }
 
 #header__menu {
-    border-bottom: 1px solid var(--fourth-accent-color);
+    border-bottom: 1px solid white;
 }
+
 
 /* Main content */
 
@@ -177,7 +197,10 @@ input:required {
 .top-artists table {
     width: 100%;
     text-align: center;
-    border: thick groove #e3dbe2;
+    border: groove;
+    border-width: thick;
+    border-color: #e3dbe2;
+    border-image: url("images/water_texture_2_by_evilpenguinsinc-d8sbauu.png") 30 round;
 }
 
 .promotion {
@@ -190,37 +213,43 @@ input:required {
     font-size: 10px;
 }
 
-.description {
-    margin-left: 5%;
-    margin-right: 5%;
-    display: flex;
-    flex-flow: row wrap;
+.image-box {
+    font-size: small;
 }
 
-.functionality-list {
-    font-size: 200%;
-    width: 49%;
-    color: var(--fourth-accent-color);
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.functionality-list img {
+.image-box img {
     width: 200px;
     height: 200px;
 }
 
-.functionality-list a {
-    font-size: 16px;
+.description {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: inline-block;
+}
+
+.description-header {
+    float: left;
+    width: 45%;
+    font-size: 230%;
+    text-align: right;
+    color: plum;
+}
+
+.functionality-list {
+    float: left;
+    font-size: 200%;
+    margin-left: 5%;
+    color: #e3dbe2;
 }
 
 .picture-show {
-    background: radial-gradient(circle, rgb(26, 26, 26), rgb(56, 21, 48));
-    border: 1px solid var(--primary-accent-color);
-    box-shadow: 0 0 10px var(--primary-accent-color);
-    margin: 5px auto;
-    width: 32.5%;
+    margin: 5px;
+    border: 1px solid #aa0088;
+    float: left;
+    width: 32%;
+    box-shadow: 0 0 10px #aa0088;
+    background: radial-gradient(circle, rgba(26, 26, 26, 1), rgba(170, 0, 136, 0.2));
 }
 
 .picture-show img {
@@ -240,6 +269,19 @@ input:required {
 
 .sitemap aside {
     font-size: xx-large;
+}
+
+.about-page .main-content {
+    background-image: url("images/background-texture.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-origin: content-box;
+}
+
+.contact-page .mail-to {
+    background-image: url("images/smile.svg");
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 .top-artists h1 {
@@ -273,7 +315,7 @@ a[id="register-link"] {
 }
 
 .search-engine:disabled {
-    background: var(--third-accent-color);
+    background: #dddddd;
 }
 
 .column-box {
@@ -288,10 +330,9 @@ a[id="register-link"] {
     overflow: hidden;
     padding: 0;
     margin: 0;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 100;
 }
 
 #github-banner a {
@@ -301,25 +342,23 @@ a[id="register-link"] {
     word-spacing: 2px;
     text-decoration: none;
     padding: 5px 15px 5px 25px;
-
     position: relative;
     left: 0;
     top: 170px;
     text-align: center;
     transform-origin: 0 0;
     transform: rotate(-45deg);
-    box-shadow: 1px 0 1px 2px var(--fourth-accent-color);
-    background-color: var(--primary-color);
-    z-index: 100;
+    box-shadow: 1px 1px 5px 1px #666666;
+    background-color: #1a1a1a;
 }
 
-#result-table {
-    text-align: left;
-}
 
 /* Rules */
 
 @media only screen and (max-width: 1300px) {
+    .picture-show {
+        width: 49%;
+    }
     .column-box {
         -webkit-column-count: 2;
         -moz-column-count: 2;
