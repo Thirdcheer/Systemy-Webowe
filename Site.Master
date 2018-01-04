@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Systemy_webowe.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <link rel="stylesheet" type="text/css" href="Styles/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="description" content="Best place in the web where you can find modern art created by our users. Join now for free and share your content!">
+    <meta name="keywords" content="Art, Beauty, Photography, Gallery, Graphics, Wallpapers, Drawing">
+    <meta name="author" content="Karolina Malanowska, Michał Regulski">
+    <title>ArtIsHere</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__container">
+        <asp:HyperLink ID="Index" runat="server" NavigateUrl="~/Index.aspx">
+            <img id="logo" src="Images/logo.png" alt="Logo"/>
+        </asp:HyperLink>
+        <div class="login-box">
+            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                <AnonymousTemplate>
+                    <h2>Log in</h2>
+                    <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
+                    <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
+                    <button id="login-button" type="submit" tabindex="3">Log In</button>
+                    <button>Change style</button>
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    Welcome
+                    <span>
+                        <asp:LoginName ID="HeadLoginName" runat="server"/>
+                    </span>!
+                    [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                </LoggedInTemplate>
+            </asp:LoginView>
+        </div>
+    </div>
+    <nav id="header__menu">
+        <form runat="server">
+            <asp:Menu ID="NavigationMenu" runat="server" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Gallery.aspx" Text="Gallery"/>
+                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact"/>
+                    <asp:MenuItem NavigateUrl="~/Sitemap.aspx" Text="Sitemap"/>
+                    <asp:MenuItem NavigateUrl="~/Survey.aspx" Text="Survey"/>
+                    <asp:MenuItem NavigateUrl="~/Register.aspx" Text="Register"/>
+                </Items>
+            </asp:Menu>
+        </form>
+    </nav>
+</header>
+
+<asp:ContentPlaceHolder ID="MainContent" runat="server">
+</asp:ContentPlaceHolder>
+
+<footer class="main-footer">
+    <div class="bottom-footer">
+        <p>
+            ArtIsHere &#169;
+        </p>
+    </div>
+</footer>
+</body>
+</html>

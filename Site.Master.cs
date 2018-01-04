@@ -3,7 +3,7 @@ using System.Web.UI;
 
 namespace Systemy_webowe
 {
-    public partial class Index : Page
+    public partial class SiteMaster : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

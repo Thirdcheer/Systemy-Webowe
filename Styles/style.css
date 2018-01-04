@@ -1,0 +1,355 @@
+/* General */
+
+body {
+    background-color: var(--primary-color);
+    color: var(--fourth-accent-color);
+    font-family: "Open Sans", sans-serif;
+    margin: 0
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:link {
+    text-decoration-style: dashed;
+}
+
+a:visited {
+    color: var(--link-visited-color);
+}
+
+hr {
+    color: var(--third-accent-color);
+}
+
+mark {
+    background-color: var(--secondary-accent-color);
+}
+
+input:required {
+    background-color: var(--secondary-accent-color);
+}
+
+:target {
+    border: 2px solid var(--primary-accent-color);
+}
+
+.top-artists :not(h1) {
+    font-style: normal;
+}
+
+/* Header */
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.header {
+    display: block;
+}
+
+#logo {
+    display: inline-block;
+    width: 256px;
+}
+
+.login-box {
+    align-items: flex-end;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, rgb(26, 26, 26), rgb(41, 23, 37));
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#header__menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: var(--primary-color);
+    z-index: 2;
+}
+
+#header__menu ul li {
+    position: relative;
+    margin: 0;
+}
+
+#header__menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+#header__menu ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+#header__menu ul li:hover > ul {
+    display: block;
+}
+
+#header__menu li {
+    display: block;
+    text-decoration: none;
+}
+
+#header__menu li a {
+    display: flex;
+    color: var(--fourth-accent-color);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+}
+
+#header__menu li:hover {
+    background-color: var(--primary-accent-color);
+}
+
+#header__menu {
+    border-bottom: 1px solid var(--fourth-accent-color);
+}
+
+/* Main content */
+
+.main-content {
+    padding: 10px;
+    display: block;
+}
+
+.button {
+    margin: 10px 5px;
+}
+
+.small-gallery {
+    display: flex;
+    justify-content: space-between;
+}
+
+#gallery-element-1 {
+    background: url("../Images/art1.jpg") center;
+}
+
+#gallery-element-2 {
+    background: url("../Images/art2.jpg") center;
+}
+
+#gallery-element-3 {
+    background: url("../Images/art3.jpg") center;
+}
+
+.small-gallery .gallery-element {
+    opacity: 0.6;
+    transition: all 0.25s ease-in;
+    flex: 2 2;
+    overflow: hidden;
+    position: relative;
+    background-size: 100%;
+}
+
+.small-gallery .gallery-element:hover {
+    opacity: 1;
+    flex: 5 5;
+}
+
+.small-gallery .gallery-element span {
+    background: no-repeat;
+    display: block;
+    height: 300px;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.top-artists table {
+    width: 100%;
+    text-align: center;
+    border: thick groove #e3dbe2;
+}
+
+.promotion {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+.bottom-footer {
+    font-size: 10px;
+}
+
+.description {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.functionality-list {
+    font-size: 200%;
+    width: 49%;
+    color: var(--fourth-accent-color);
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.functionality-list img {
+    width: 200px;
+    height: 200px;
+}
+
+.functionality-list a {
+    font-size: 16px;
+}
+
+.picture-show {
+    background: radial-gradient(circle, rgb(26, 26, 26), rgb(56, 21, 48));
+    border: 1px solid var(--primary-accent-color);
+    box-shadow: 0 0 10px var(--primary-accent-color);
+    margin: 5px auto;
+    width: 32.5%;
+}
+
+.picture-show img {
+    width: 100%;
+    height: auto;
+}
+
+.picture-show .note {
+    padding: 15px;
+    text-align: center;
+}
+
+.sitemap {
+    text-align: center;
+    font-size: 18pt;
+}
+
+.sitemap aside {
+    font-size: xx-large;
+}
+
+.top-artists h1 {
+    position: static;
+    line-height: 50px;
+    font-variant: small-caps;
+    font-weight: lighter;
+}
+
+.main-footer img {
+    height: 25px;
+    width: 25px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border: transparent;
+}
+
+.main-footer {
+    position: relative;
+    bottom: 0;
+}
+
+a[id="register-link"] {
+    text-decoration: none;
+}
+
+.mentoring-checkbox:checked {
+    height: 25px;
+    width: 25px;
+}
+
+.search-engine:disabled {
+    background: var(--third-accent-color);
+}
+
+.column-box {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+}
+
+#github-banner {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}
+
+#github-banner a {
+    display: block;
+    width: 190px;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-decoration: none;
+    padding: 5px 15px 5px 25px;
+
+    position: relative;
+    left: 0;
+    top: 170px;
+    text-align: center;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    box-shadow: 1px 0 1px 2px var(--fourth-accent-color);
+    background-color: var(--primary-color);
+    z-index: 100;
+}
+
+#result-table {
+    text-align: left;
+}
+
+/* Rules */
+
+@media only screen and (max-width: 1300px) {
+    .column-box {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+:root {
+    --main-color: #666666;
+    --primary-color: #1a1a1a;
+    --primary-accent-color: #aa0088;
+    --secondary-accent-color: #dda0dd;
+    --third-accent-color: #f0dcec;
+    --fourth-accent-color: #e3dbe2;
+    --link-color: #7fffd4;
+    --link-visited-color: #00ffff;
+}
