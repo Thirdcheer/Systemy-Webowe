@@ -36,18 +36,14 @@
         </div>
     </div>
     <nav id="header__menu">
-        <form runat="server">
-            <asp:Menu ID="NavigationMenu" runat="server" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                <Items>
-                    <asp:MenuItem NavigateUrl="~/Gallery.aspx" Text="Gallery"/>
-                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                    <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact"/>
-                    <asp:MenuItem NavigateUrl="~/Sitemap.aspx" Text="Sitemap"/>
-                    <asp:MenuItem NavigateUrl="~/Survey.aspx" Text="Survey"/>
-                    <asp:MenuItem NavigateUrl="~/Register.aspx" Text="Register"/>
-                </Items>
-            </asp:Menu>
-        </form>
+        <ul>
+            <li><a href="Gallery.aspx">Gallery</a></li>
+            <li><a href="About.aspx">About</a></li>
+            <li><a href="Contact.aspx">Contact</a></li>
+            <li><a href="Sitemap.aspx">Sitemap</a></li>
+            <li><a href="Survey.aspx">Survey</a></li>
+            <li><a href="Register.aspx">Register</a></li>
+        </ul>
     </nav>
 </header>
 

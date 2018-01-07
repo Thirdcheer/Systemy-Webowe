@@ -3,36 +3,52 @@ CodeBehind="Register.aspx.cs" Inherits="Systemy_webowe.Register" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main-content">
-        <form id="register_form" method="POST" autocomplete="on">
+        <form id="register_form" method="POST" autocomplete="on" runat="server">
             <fieldset>
                 <legend>Personal data</legend>
-                <input onfocus="focuser(1)" onblur="blurer()" type="text" name="firstname" title="Name" autofocus required> Name<br>
+                <asp:TextBox id="name" runat="server"/> Name<br>
+                <asp:RequiredFieldValidator ID="RequiredName" runat="server"
+                    ControlToValidate="name"
+                    ErrorMessage="Name cannot be empty"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
                 <br>
-                <input onfocus="focuser(2)" onblur="blurer()" type="text" name="lastname" title="Surname" required> Surname<br>
+                <asp:TextBox id="lastname" runat="server"/> Lastname<br>
+                <asp:RequiredFieldValidator ID="RequiredLastName" runat="server"
+                    ControlToValidate="lastname"
+                    ErrorMessage="Lastname cannot be empty"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
                 <br>
-                <input onfocus="focuser(3)" onblur="blurer()" type="text" name="nick" title="Nick"> Nick<br>
+                <asp:TextBox id="nick" runat="server" /> Nick<br>
+                <asp:RequiredFieldValidator ID="RequiredNick" runat="server"
+                    ControlToValidate="nick"
+                    ErrorMessage="Nick cannot be empty"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
                 <br>
-                <input onfocus="focuser(4)" onblur="blurer()" type="password" name="pass" title="Password"> Password<br>
+                <asp:TextBox id="password" runat="server"/> Password<br>
+                <asp:RequiredFieldValidator ID="RequiredPassword" runat="server"
+                    ControlToValidate="password"
+                    ErrorMessage="Password cannot be empty"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
                 <br>
-                <input list="month" name="month" title="Month of birth"> Month of birth<br>
-                <datalist id="month">
-                    <option>Styczeń</option>
-                    <option>Luty</option>
-                    <option>Marzec</option>
-                    <option>Kwiecień</option>
-                    <option>Maj</option>
-                    <option>Czerwiec</option>
-                    <option>Lipiec</option>
-                    <option>Sierpień</option>
-                    <option>Wrzesień</option>
-                    <option>Październik</option>
-                    <option>Listopad</option>
-                    <option>Grudzień</option>
-                </datalist>
+                <asp:TextBox id="month" runat="server"/> Month of birth<br>
                 <br>
-                <input type="email" name="email" title="E-mail" required> E-mail<br>
+                <asp:TextBox id="email" runat="server" /> E-mail<br>
+                <asp:RegularExpressionValidator id="EmailRegex" runat="server"
+                    ControlToValidate="email"
+                    ErrorMessage="Incorrect email format"
+                    ValidationExpression="^(?(\&quot;&quot;)(\&quot;&quot;.+?&quot;&quot;@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$"
+                    ForeColor="Red" />
                 <br>
-                <input type="tel" name="tel" title="Phone number (9 digits)" pattern="[0-9]{9}"> Phone number (9 digits)
+                <asp:TextBox id="phone" runat="server" /> Phone number (9 digits)<br>
+                <asp:RegularExpressionValidator ID="Regular" runat="server"
+                    ControlToValidate="phone"
+                    ErrorMessage="Incorrect phone format"
+                    ValidationExpression="^\d{3}-\d{3}-\d{3}$"
+                    ForeColor="Red" />
                 <br>
             </fieldset>
             <br>
@@ -73,8 +89,8 @@ CodeBehind="Register.aspx.cs" Inherits="Systemy_webowe.Register" %>
                 <input type="checkbox" checked="checked" name="mentoring" class="mentoring-checkbox" title="I want to participate in ArtIsHere mentoring program"><b>I want to participate in ArtIsHere mentoring program</b>
             </fieldset>
 
-            <input class="button" onclick="submitter()" id="submit-btn" type="submit" value="Submit">
-            <input class="button" onclick="resetter()" type="reset" value="Reset"><br>
+            <asp:Button ID="send" text="Submit" runat="server"></asp:Button>
+            <asp:Button id="reset" Text="Reset" runat="server" ></asp:Button>
         </form>
     </div>
     <div class="promotion">

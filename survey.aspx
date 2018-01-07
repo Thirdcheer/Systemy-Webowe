@@ -3,7 +3,7 @@ CodeBehind="Survey.aspx.cs" Inherits="Systemy_webowe.Survey" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main-content">
-        <form method="POST" autocomplete="on" id="surveyform">
+        <form method="POST" autocomplete="on" id="surveyform" runat="server">
             <fieldset>
                 <legend>Tell us your preferences</legend>
                 <select name="artist">
@@ -23,20 +23,20 @@ CodeBehind="Survey.aspx.cs" Inherits="Systemy_webowe.Survey" %>
                 Do you have your own website?<br>
                 <input type="url" name="url" title="Your website"/><br>
                 Choose types you are into:<br>
-                <asp:CheckBox ID="ceramixcheck" Text="Ceramics"/>
-                <asp:CheckBox ID="drawingcheck" Text="Drawing"/>
-                <asp:CheckBox ID="photocheck" Text="Photography"/>
-                <asp:CheckBox ID="sculpturecheck" Text="Sculpture"/>
-                <asp:CheckBox ID="videocheck" Text="Video"/>
+                <asp:CheckBox ID="ceramixcheck" runat="server" Text="Ceramics"/>
+                <asp:CheckBox ID="drawingcheck" runat="server" Text="Drawing"/>
+                <asp:CheckBox ID="photocheck" runat="server" Text="Photography"/>
+                <asp:CheckBox ID="sculpturecheck" runat="server" Text="Sculpture"/>
+                <asp:CheckBox ID="videocheck" runat="server" Text="Video"/>
                 <br>
                 Choose categories you want to follow:<br>
-                <asp:CheckBox ID="abstractcheck" Text="Abstract"/>
-                <asp:CheckBox ID="fashionheck" Text="Fashion"/>
-                <asp:CheckBox ID="naturecheck" Text="Nature"/>
-                <asp:CheckBox ID="archcheck" Text="Architecture"/>
+                <asp:CheckBox ID="abstractcheck" runat="server" Text="Abstract"/>
+                <asp:CheckBox ID="fashionheck" runat="server" Text="Fashion"/>
+                <asp:CheckBox ID="naturecheck" runat="server" Text="Nature"/>
+                <asp:CheckBox ID="archcheck" runat="server" Text="Architecture"/>
                 <br>
                 How much time you spend on creating art? (per week):<br>
-                <asp:RadioButtonList ID="timespent">
+                <asp:RadioButtonList ID="timespent" runat="server">
                     <asp:ListItem Value="0-4">0-4</asp:ListItem>
                     <asp:ListItem Value="5-8">5-8</asp:ListItem>
                     <asp:ListItem Value="9-16">9-16</asp:ListItem>
