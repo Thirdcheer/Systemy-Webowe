@@ -43,13 +43,14 @@
             <li><a href="Sitemap.aspx">Sitemap</a></li>
             <li><a href="Survey.aspx">Survey</a></li>
             <li><a href="Register.aspx">Register</a></li>
+            <li><a href="Shop.aspx">Shop</a></li>
         </ul>
     </nav>
 </header>
 
 <asp:ContentPlaceHolder ID="MainContent" runat="server">
 </asp:ContentPlaceHolder>
-
+<hr>
 <footer class="main-footer">
     <div class="bottom-footer">
         <p>
