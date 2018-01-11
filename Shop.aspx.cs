@@ -15,15 +15,15 @@ namespace Systemy_webowe
 
         private void addItems()
         {
-            posters.Add("Wrath", 150);
-            posters.Add("Checkpoint", 200);
-            posters.Add("Labrigator", 175);
-            posters.Add("Cigarette", 100);
+            posters.Add("Poster 1", 150);
+            posters.Add("Poster 2", 75);
+            posters.Add("Poster 3", 175);
+            posters.Add("Poster 4", 100);
 
-            stickers.Add("Work", 25);
-            stickers.Add("Finished", 15);
-            stickers.Add("Ninja", 25);
-            stickers.Add("Rawr", 15);
+            stickers.Add("Sticker 1", 25);
+            stickers.Add("Sticker 2", 15);
+            stickers.Add("Sticker 3", 25);
+            stickers.Add("Sticker 4", 15);
         }
 
         protected void Page_Load(object sender, EventArgs e)
