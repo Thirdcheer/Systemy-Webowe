@@ -1,26 +1,35 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
- 
-public partial class Summary : Page
+
+namespace Systemy_webowe
 {
-    protected void Page_Load(object sender, EventArgs e)
+
+    public partial class Summary : Page
     {
-        if (Session["Items"] == null)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "Error occured: session lost!";
-            Label2.Visible = false;
-            Label3.Visible = false;
+            if (Session["Items"] == null)
+            {
+                Text1.Text = "Error occured: session lost!";
+                Text2.Visible = false;
+                Text3.Visible = false;
+            }
+
+            else
+            {
+                Text2.Text = "Total price: " + Session["total_price"] + "$";
+                Text3.Text = "Payment method: " + Session["payment_method"];
+                Session.Clear();
+            }
         }
- 
-        else
+
+        public void method()
         {
-            Label2.Text = "Total price: " + Session["total_price"] + "$";
-            Label3.Text = "Payment method: " + Session["payment_method"];
-            Session.Clear();
+
         }
     }
 }

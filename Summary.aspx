@@ -1,8 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeFile="Summary.aspx.cs" Inherits="Summary" %>
+﻿<%@ Page Title="Summary" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+CodeBehind="Summary.aspx.cs" Inherits="Systemy_webowe.Summary" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main-content">
-        <form id="form1" runat="server">
+        <form id="formularz" runat="server">
             <fieldset>
             <legend>Shop</legend>
         <div>
@@ -17,14 +18,14 @@
                 <div style="padding: 30px; width: 685px; margin-left: 84px; ">
                     <h1>Summary</h1>
                     <h2>
-                        <asp:Label ID="Label1" runat="server" Text="Thank you for order!"></asp:Label>
+                        <asp:Label ID="Text1" runat="server" Text="Thank you for order!"></asp:Label>
                     </h2>
-                   <asp:Label ID="Label2" runat="server" Text="Total price: "></asp:Label>
+                   <asp:Label ID="Text2" runat="server" Text="Total price: "></asp:Label>
                    <br>
-                   <asp:Label ID="Label3" runat="server" Text="Payment Method: "></asp:Label>
+                   <asp:Label ID="Text3" runat="server" Text="Payment Method: "></asp:Label>
                    <br>
                    <br>
-                   <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Shop.aspx">BACK TO SHOP</asp:HyperLink>
+                   <asp:HyperLink ID="Link1" runat="server" NavigateUrl="~/Shop.aspx">BACK TO SHOP</asp:HyperLink>
                 </div>
         </fieldset>
         </form>

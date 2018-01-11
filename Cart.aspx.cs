@@ -4,17 +4,17 @@ using System.Web.UI;
 
 namespace Systemy_webowe
 {
-    
+
     public partial class Cart : Page
     {
         Hashtable cartItems = new Hashtable();
         private int price = 0;
-        
+
         protected void Page_Init(object sender, EventArgs e)
         {
-           
+
         }
- 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Items"] != null)
@@ -24,19 +24,19 @@ namespace Systemy_webowe
                 BulletedList1.DataValueField = "Value";
                 BulletedList1.DataTextField = "Key";
                 BulletedList1.DataBind();
- 
+
                 foreach (DictionaryEntry de in cartItems)
                 {
                     price += Convert.ToInt32(de.Value);
                 }
- 
+
                 if (deliveryCheckBox.SelectedItem.Value == "10")
                 {
                     price += Convert.ToInt32(deliveryCheckBox.SelectedItem.Value);
                 }
- 
+
                 priceLabel.Text = "Total price: " + price + "PLN";
- 
+
                 Session["total_price"] = price;
                 Session["payment_method"] = paymentCheckBox.SelectedItem.Text;
             }

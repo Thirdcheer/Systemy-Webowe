@@ -39,34 +39,36 @@ namespace Systemy_webowe
 
             if (Session["Items"] != null)
             {
-                items = (Hashtable) Session["Items"];
+                items = (Hashtable)Session["Items"];
             }
 
             addItems();
-        
+
         }
 
         protected void onCategorySelect(object sender, EventArgs e)
         {
-            
+
             Hashtable selected = new Hashtable();
             switch (RadioButtonList1.SelectedItem.Text)
             {
-                case "Posters": selected = posters;
+                case "Posters":
+                    selected = posters;
                     break;
-                case "Stickers": selected = stickers;
-                     break;
-                
+                case "Stickers":
+                    selected = stickers;
+                    break;
+
             }
             showItemsInCategory(selected);
         }
 
         private void showItemsInCategory(Hashtable selected)
         {
-            
+
             CheckBoxList1.Items.Clear();
             CheckBoxList1.Visible = true;
-            
+
             foreach (DictionaryEntry d in selected)
             {
                 String listitem = d.Key.ToString() + " | " + d.Value.ToString() + "PLN";
@@ -79,7 +81,7 @@ namespace Systemy_webowe
             String key;
             String value;
 
-            int itemCount = (int) Session["ItemCount"];
+            int itemCount = (int)Session["ItemCount"];
 
             foreach (ListItem li in CheckBoxList1.Items)
             {
@@ -105,5 +107,5 @@ namespace Systemy_webowe
         }
 
 
-}
+    }
 }

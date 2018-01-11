@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeFile="Cart.aspx.cs" Inherits="Systemy_webowe.Cart" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeBehind="Cart.aspx.cs" Inherits="Systemy_webowe.Cart" %>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main-content">
         <form id="form1" runat="server">
