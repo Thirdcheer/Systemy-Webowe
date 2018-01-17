@@ -1,8 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeBehind="Shop.aspx.cs" Inherits="Systemy_webowe.Shop" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeBehind="Shop.aspx.cs" Inherits="Systemy_webowe.Shop" ValidateRequest="true" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main-content">
-        <form id="form1" runat="server">
             <fieldset>
             <legend>Shop</legend>
         <div>
@@ -35,6 +34,5 @@
                 </div>
             </div>
             </fieldset>
-        </form>
     </div>
 </asp:Content>

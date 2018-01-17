@@ -3,7 +3,6 @@ CodeBehind="Register.aspx.cs" Inherits="Systemy_webowe.Register" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main-content">
-        <form id="register_form" method="POST" autocomplete="on" runat="server">
             <fieldset>
                 <legend>Personal data</legend>
                 <asp:TextBox id="name" runat="server"/> Name<br>
@@ -91,7 +90,6 @@ CodeBehind="Register.aspx.cs" Inherits="Systemy_webowe.Register" %>
 
             <asp:Button ID="send" text="Submit" runat="server"></asp:Button>
             <asp:Button id="reset" Text="Reset" runat="server" ></asp:Button>
-        </form>
     </div>
     <div class="promotion">
         <hr>

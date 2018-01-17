@@ -11,30 +11,25 @@
     <title>ArtIsHere</title>
 </head>
 <body>
+    <form runat="server">
 <header class="header">
     <div class="header__container">
         <asp:HyperLink ID="Index" runat="server" NavigateUrl="~/Index.aspx">
             <img id="logo" src="Images/logo.png" alt="Logo"/>
         </asp:HyperLink>
-        <div class="login-box">
-            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                <AnonymousTemplate>
-                    <h2>Log in</h2>
-                    <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
-                    <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
-                    <button id="login-button" type="submit" tabindex="3">Log In</button>
-                    <button>Change style</button>
-                </AnonymousTemplate>
-                <LoggedInTemplate>
-                    Welcome
-                    <span>
-                        <asp:LoginName ID="HeadLoginName" runat="server"/>
-                    </span>!
-                    [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
-                </LoggedInTemplate>
-            </asp:LoginView>
+        <div id="login-box" style="display:rlt">
+        <asp:LoginView ID="LoginView1" runat="server">
+            <AnonymousTemplate>
+            Nie jesteś zalogowany
+            </AnonymousTemplate>  
+            <LoggedInTemplate>
+            Witaj
+            </LoggedInTemplate>
+        </asp:LoginView>
+        <asp:LoginName ID="LoginName1" runat="server" />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
         </div>
-    </div>
+      </div>
     <nav id="header__menu">
         <ul>
             <li><a href="Gallery.aspx">Gallery</a></li>
@@ -57,6 +52,7 @@
             ArtIsHere &#169;
         </p>
     </div>
-</footer>
+</footer
+        </form>
 </body>
 </html>
