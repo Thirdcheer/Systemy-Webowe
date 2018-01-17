@@ -11,48 +11,57 @@
     <title>ArtIsHere</title>
 </head>
 <body>
-    <form runat="server">
-<header class="header">
-    <div class="header__container">
-        <asp:HyperLink ID="Index" runat="server" NavigateUrl="~/Index.aspx">
-            <img id="logo" src="Images/logo.png" alt="Logo"/>
-        </asp:HyperLink>
-        <div id="login-box" style="display:rlt">
-        <asp:LoginView ID="LoginView1" runat="server">
-            <AnonymousTemplate>
-            Nie jesteś zalogowany
-            </AnonymousTemplate>  
-            <LoggedInTemplate>
-            Witaj
-            </LoggedInTemplate>
-        </asp:LoginView>
-        <asp:LoginName ID="LoginName1" runat="server" />
-        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+<form id="formularz" runat="server">
+    <header class="header">
+        <div class="header__container">
+            <asp:HyperLink ID="Index" runat="server" NavigateUrl="~/Index.aspx">
+                <asp:Image ID="logo" runat="server" ImageUrl="~/Images/logo.png" alt="Logo"/>
+            </asp:HyperLink>
+            <div class="login-box">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        <h2>Log in</h2>
+                        <input id="login" placeholder="Username/E-mail" name="login" type="text" autocomplete="on" tabindex="1">
+                        <input id="password" placeholder="Password" name="password" type="password" tabindex="2">
+                        <button id="login-button" type="submit" tabindex="3">Log In</button>
+                        <button>Change style</button>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome
+                        <span>
+                            <asp:LoginName ID="HeadLoginName" runat="server"/>
+                        </span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
         </div>
-      </div>
-    <nav id="header__menu">
-        <ul>
-            <li><a href="Gallery.aspx">Gallery</a></li>
-            <li><a href="About.aspx">About</a></li>
-            <li><a href="Contact.aspx">Contact</a></li>
-            <li><a href="Sitemap.aspx">Sitemap</a></li>
-            <li><a href="Survey.aspx">Survey</a></li>
-            <li><a href="Register.aspx">Register</a></li>
-            <li><a href="Shop.aspx">Shop</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav id="header__menu">
+            <asp:Menu ID="NavigationMenu" runat="server" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Gallery.aspx" Text="Gallery"/>
+                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact"/>
+                    <asp:MenuItem NavigateUrl="~/Sitemap.aspx" Text="Sitemap"/>
+                    <asp:MenuItem NavigateUrl="~/Survey.aspx" Text="Survey"/>
+                    <asp:MenuItem NavigateUrl="~/Account/Register.aspx" Text="Register"/>
+                    <asp:MenuItem NavigateUrl="~/Shop.aspx" Text="Shop"/>
+                </Items>
+            </asp:Menu>
+        </nav>
+    </header>
 
-<asp:ContentPlaceHolder ID="MainContent" runat="server">
-</asp:ContentPlaceHolder>
-<hr>
-<footer class="main-footer">
-    <div class="bottom-footer">
-        <p>
-            ArtIsHere &#169;
-        </p>
-    </div>
-</footer
-        </form>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <hr>
+    <footer class="main-footer">
+        <div class="bottom-footer">
+            <p>
+                ArtIsHere &#169;
+            </p>
+        </div>
+    </footer>
+</form>
 </body>
 </html>

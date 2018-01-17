@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Systemy_webowe.Account
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : Page
     {
         protected void ValidateUser(object sender, EventArgs e)
         {
-            int userId = 0;
+            int userId;
             string constr = ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
@@ -29,6 +26,7 @@ namespace Systemy_webowe.Account
                     userId = Convert.ToInt32(cmd.ExecuteScalar());
                     con.Close();
                 }
+
                 switch (userId)
                 {
                     case -1:
@@ -46,7 +44,8 @@ namespace Systemy_webowe.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            RegisterHyperLink.NavigateUrl = "Register.aspx?ReturnUrl=" + HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
+            RegisterHyperLink.NavigateUrl =
+                "Register.aspx?ReturnUrl=" + HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
         }
     }
 }

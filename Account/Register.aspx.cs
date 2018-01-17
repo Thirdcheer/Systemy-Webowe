@@ -1,32 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
+using System.Data.SqlClient;
 using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Systemy_webowe.Account
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class Register : Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+            
         }
 
-        protected void RegisterUser_CreatedUser(object sender, EventArgs e)
+        protected void CreateUser_Click(object sender, EventArgs e)
         {
-            FormsAuthentication.SetAuthCookie(RegisterUser.UserName, false /* createPersistentCookie */);
-
-            string continueUrl = RegisterUser.ContinueDestinationPageUrl;
-            if (String.IsNullOrEmpty(continueUrl))
+            using (var cmd = new SqlConnection())
             {
-                continueUrl = "~/";
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Username", Username.Text);
+                    cmd.Parameters.AddWithValue("@Name", Name.Text);
+                    cmd.Parameters.AddWithValue("@Lastname", LastName.Text);
+                    cmd.Parameters.AddWithValue("@Password", Password.Text);
+                    cmd.Parameters.AddWithValue("@Email", Email.Text);
+                    var con = cmd.Connection;
+                    con.Open();
+                    int userId = Convert.ToInt32(cmd.ExecuteScalar());
+                    con.Close();
+                }
             }
-            Response.Redirect(continueUrl);
         }
-
     }
 }

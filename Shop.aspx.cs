@@ -9,8 +9,8 @@ namespace Systemy_webowe
 {
     public partial class Shop : Page
     {
-        private Hashtable posters = new Hashtable();
-        private Hashtable stickers = new Hashtable();
+        private readonly Hashtable posters = new Hashtable();
+        private readonly Hashtable stickers = new Hashtable();
         private Hashtable items = new Hashtable();
 
         private void addItems()
@@ -39,17 +39,15 @@ namespace Systemy_webowe
 
             if (Session["Items"] != null)
             {
-                items = (Hashtable)Session["Items"];
+                items = (Hashtable) Session["Items"];
             }
 
             addItems();
-
         }
 
         protected void onCategorySelect(object sender, EventArgs e)
         {
-
-            Hashtable selected = new Hashtable();
+            var selected = new Hashtable();
             switch (RadioButtonList1.SelectedItem.Text)
             {
                 case "Posters":
@@ -58,37 +56,33 @@ namespace Systemy_webowe
                 case "Stickers":
                     selected = stickers;
                     break;
-
             }
+
             showItemsInCategory(selected);
         }
 
         private void showItemsInCategory(Hashtable selected)
         {
-
             CheckBoxList1.Items.Clear();
             CheckBoxList1.Visible = true;
 
             foreach (DictionaryEntry d in selected)
             {
-                String listitem = d.Key.ToString() + " | " + d.Value.ToString() + "PLN";
+                var listitem = d.Key + " | " + d.Value + "PLN";
                 CheckBoxList1.Items.Add(new ListItem(listitem, d.Value.ToString()));
             }
         }
 
         protected void onAddToCartClick(object sender, EventArgs e)
         {
-            String key;
-            String value;
-
-            int itemCount = (int)Session["ItemCount"];
+            var itemCount = (int) Session["ItemCount"];
 
             foreach (ListItem li in CheckBoxList1.Items)
             {
                 if (li.Selected)
                 {
-                    key = li.Text.ToString();
-                    value = li.Value.ToString();
+                    var key = li.Text;
+                    var value = li.Value;
 
                     if (items.ContainsKey(key))
                     {
@@ -101,11 +95,10 @@ namespace Systemy_webowe
                     }
                 }
             }
+
             Session["Items"] = items;
             Session["ItemCount"] = itemCount;
             Label2.Text = Session["ItemCount"].ToString();
         }
-
-
     }
 }

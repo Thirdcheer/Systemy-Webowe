@@ -3,14 +3,6 @@ CodeBehind="Gallery.aspx.cs" Inherits="Systemy_webowe.About" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main-content">
-        <div id="statistics">
-            <button id="images" onclick="statistics_images()">Obrazki</button>
-            <button onclick="statistics_links()">Linki</button>
-            <button onclick="statistics_forms()">Formularze</button>
-            <button onclick="statistics_anchor()">Kotwice</button>
-            <button onclick="statistics_item()">Podmień zdjęcie</button>
-        </div>
-
         <div class="gallery">
             <div class="picture-show">
                 <img id="first" src="Images/gallery_images/beauty.jpg" alt="beauty" width="600" height="400">

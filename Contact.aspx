@@ -9,7 +9,7 @@ CodeBehind="Contact.aspx.cs" Inherits="Systemy_webowe.Contact" %>
             free and share your
             content!
         </h4>
-        <div class="mail-to">
+        <div>
             <hr>
             <a href="mailto:someone@example.com" style="color: plum">someone@example.com</a>
             <button id="Contact">Contact</button>
