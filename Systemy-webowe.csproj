@@ -103,7 +103,6 @@
     </Content>
     <Content Include="Gallery.aspx" />
     <Content Include="Index.aspx" />
-    <Content Include="Register.aspx" />
     <Content Include="Sitemap.aspx" />
     <Content Include="Survey.aspx" />
     <Content Include="Cart.aspx">
@@ -179,13 +178,6 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sitemap.aspx.cs">
       <DependentUpon>Sitemap.aspx</DependentUpon>

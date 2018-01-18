@@ -15,7 +15,7 @@ namespace Systemy_webowe.Account
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            using (var cmd = new SqlConnection())
+       /*     using (var cmd = new SqlConnection())
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
@@ -31,6 +31,8 @@ namespace Systemy_webowe.Account
                     con.Close();
                 }
             }
-        }
+     */    
+    }
+        
     }
 }
